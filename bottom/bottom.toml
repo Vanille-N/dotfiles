@@ -114,3 +114,31 @@ group_processes = true
 # Represents the colours of the battery based on charge
 #battery_colors = ["red", "yellow", "yellow", "green", "green", "green"]
 
+##########################################################
+
+# Layout - layouts follow a pattern like this:
+# [[row]] represents a row in the application.
+# [[row.child]] represents either a widget or a column.
+# [[row.child.child]] represents a widget.
+#
+# All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
+# All layout components have a ratio value - if this is not set, then it defaults to 1.
+
+# The default widget layout:
+[[row]]
+  ratio=30
+  [[row.child]]
+  type="cpu"
+[[row]]
+  ratio=70
+  [[row.child]]
+    ratio=50
+    [[row.child.child]]
+      ratio=50
+      type="mem"
+    [[row.child.child]]
+      ratio=40
+      type="net"
+  # [[row.child]]
+  #   ratio=50
+  #   type="proc"
