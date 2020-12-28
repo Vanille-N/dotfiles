@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+# various compilers
+ctex() { # LaTeX
+    base=${1%.*}
+    pdflatex --interaction=nonstopmode --halt-on-error $base.tex
+}
+crs() { # Rust
+    base=${1%.*}
+    rustc -o $base.exe $base.rs
+}
+ccc() { # C
+    base=${1%.*}
+    gcc -o $base.exe $base.c
+}
+cas() { # ix86 asm
+    base=${1%.*}
+    gcc -ggdb -o $base $base.s -lm -lc
+}
