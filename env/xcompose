@@ -1,0 +1,68 @@
+include "%L"
+
+<Multi_key> <A> <A> : "Α"    U0391    # GREEK CAPITAL LETTER ALPHA
+<Multi_key> <a> <a> : "α"    U03B1    # GREEK SMALL LETTER ALPHA
+<Multi_key> <B> <B> : "Β"    U0392    # GREEK CAPITAL LETTER BETA
+<Multi_key> <b> <b> : "β"    U03B2    # GREEK SMALL LETTER BETA
+<Multi_key> <G> <G> : "Γ"    U0393    # GREEK CAPITAL LETTER GAMMA
+<Multi_key> <g> <g> : "γ"    U03B3    # GREEK SMALL LETTER GAMMA
+<Multi_key> <D> <D> : "Δ"    U0394    # GREEK CAPITAL LETTER DELTA
+<Multi_key> <d> <d> : "δ"    U03B4    # GREEK SMALL LETTER DELTA
+<Multi_key> <E> <E> : "Ε"    U0395    # GREEK CAPITAL LETTER EPSILON
+<Multi_key> <e> <e> : "ε"    U03B5    # GREEK SMALL LETTER EPSILON
+<Multi_key> <Z> <Z> : "Ζ"    U0396    # GREEK CAPITAL LETTER ZETA
+<Multi_key> <z> <z> : "ζ"    U03B6    # GREEK SMALL LETTER ZETA
+<Multi_key> <H> <H> : "Η"    U0397    # GREEK CAPITAL LETTER ETA
+<Multi_key> <h> <h> : "η"    U03B7    # GREEK SMALL LETTER ETA
+<Multi_key> <J> <J> : "Θ"    U0398    # GREEK CAPITAL LETTER THETA
+<Multi_key> <j> <j> : "θ"    U03B8    # GREEK SMALL LETTER THETA
+<Multi_key> <I> <I> : "Ι"    U0399    # GREEK CAPITAL LETTER IOTA
+<Multi_key> <i> <i> : "ι"    U03B9    # GREEK SMALL LETTER IOTA
+<Multi_key> <K> <K> : "Κ"    U039A    # GREEK CAPITAL LETTER KAPPA
+<Multi_key> <k> <k> : "κ"    U03BA    # GREEK SMALL LETTER KAPPA
+<Multi_key> <L> <L> : "Λ"    U039B    # GREEK CAPITAL LETTER LAMBDA
+<Multi_key> <l> <l> : "λ"    U03BB    # GREEK SMALL LETTER LAMDA
+<Multi_key> <M> <M> : "Μ"    U039C    # GREEK CAPITAL LETTER MU
+<Multi_key> <m> <m> : "μ"    U03BC    # GREEK SMALL LETTER MU
+<Multi_key> <N> <N> : "Ν"    U039D    # GREEK CAPITAL LETTER NU
+<Multi_key> <n> <n> : "ν"    U03BD    # GREEK SMALL LETTER NU
+<Multi_key> <Q> <Q> : "Ξ"    U039E    # GREEK CAPITAL LETTER XI
+<Multi_key> <q> <q> : "ξ"    U03BE    # GREEK SMALL LETTER XI
+<Multi_key> <O> <O> : "Ο"    U039F    # GREEK CAPITAL LETTER OMICRON
+<Multi_key> <o> <o> : "ο"    U03BF    # GREEK SMALL LETTER OMICRON
+<Multi_key> <P> <P> : "Π"    U03A0    # GREEK CAPITAL LETTER PI
+<Multi_key> <p> <p> : "π"    U03C0    # GREEK SMALL LETTER PI
+<Multi_key> <R> <R> : "Ρ"    U03A1    # GREEK CAPITAL LETTER RHO
+<Multi_key> <r> <r> : "ρ"    U03C1    # GREEK SMALL LETTER RHO
+<Multi_key> <S> <S> : "Σ"    U03A3    # GREEK CAPITAL LETTER SIGMA
+<Multi_key> <s> <s> : "σ"    U03C3    # GREEK SMALL LETTER SIGMA
+<Multi_key> <T> <T> : "Τ"    U03A4    # GREEK CAPITAL LETTER TAU
+<Multi_key> <t> <t> : "τ"    U03C4    # GREEK SMALL LETTER TAU
+<Multi_key> <U> <U> : "Υ"    U03A5    # GREEK CAPITAL LETTER UPSILON
+<Multi_key> <u> <u> : "υ"    U03C5    # GREEK SMALL LETTER UPSILON
+<Multi_key> <F> <F> : "Φ"    U03A6    # GREEK CAPITAL LETTER PHI
+<Multi_key> <f> <f> : "φ"    U03C6    # GREEK SMALL LETTER PHI
+<Multi_key> <C> <C> : "Χ"    U03A7    # GREEK CAPITAL LETTER CHI
+<Multi_key> <c> <c> : "χ"    U03C7    # GREEK SMALL LETTER CHI
+<Multi_key> <Y> <Y> : "Ψ"    U03A8    # GREEK CAPITAL LETTER PSI
+<Multi_key> <y> <y> : "ψ"    U03C8    # GREEK SMALL LETTER PSI
+<Multi_key> <W> <W> : "Ω"    U03A9    # GREEK CAPITAL LETTER OMEGA
+<Multi_key> <w> <w> : "ω"    U03C9    # GREEK SMALL LETTER OMEGA
+
+<Multi_key> <8> <8>                   : "∞"  U221E  # INFINITY
+<Multi_key> <underscore> <space>      : "⎵"  U2423  # VISIBLE SPACE
+<Multi_key> <dollar> <dollar>         : "€"         # EURO
+
+<Multi_key> <underscore> <underscore> : "─"  U2500  # HORIZ
+<Multi_key> <bar> <space>             : "│"  U2502  # VERT
+<Multi_key> <comma> <minus>           : "┌"  U250C  # UL ANGLE
+<Multi_key> <minus> <comma>           : "┐"  U2510  # UR ANGLE
+<Multi_key> <apostrophe> <minus>      : "└"  U2514  # DL ANGLE
+<Multi_key> <minus> <apostrophe>      : "┘"  U2518  # DR ANGLE
+<Multi_key> <bar> <minus>             : "├"  U251C  # RIGHT JOIN
+<Multi_key> <minus> <bar>             : "┤"  U2524  # LEFT JOIN
+<Multi_key> <underscore> <comma>      : "┬"  U252C  # DOWN JOIN
+<Multi_key> <underscore> <apostrophe> : "┴"  U2534  # UP JOIN
+<Multi_key> <underscore> <bar>        : "┼"  U253C  # CROSS
+<Multi_key> <numbersign> <space>      : "▄"  U2584  # HALF BLOCK
+<Multi_key> <numbersign> <numbersign> : "█"  U2588  # FULL BLOCK
