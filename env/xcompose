@@ -66,3 +66,63 @@ include "%L"
 <Multi_key> <underscore> <bar>        : "┼"  U253C  # CROSS
 <Multi_key> <numbersign> <space>      : "▄"  U2584  # HALF BLOCK
 <Multi_key> <numbersign> <numbersign> : "█"  U2588  # FULL BLOCK
+
+<Multi_key> <e> <minus>               : "∊"  U220A  # SMALL ELEMENT OF
+<Multi_key> <D> <d>                   : "∇"  U2207  # NABLA
+<Multi_key> <i> <t>                   : "∫"  U222B  # INTEGRAL
+<Multi_key> <colon> <period>          : "∴"  U2234  # THEREFORE
+<Multi_key> <o> <plus>                : "⊕"  U2295  # CIRCLED PLUS
+<Multi_key> <equal> <N>               : "ℕ"         # BLACKBOARD BOLD N
+<Multi_key> <equal> <Z>               : "ℤ"         # BLACKBOARD BOLD Z
+<Multi_key> <equal> <Q>               : "ℚ"         # BLACKBOARD BOLD Q
+<Multi_key> <equal> <R>               : "ℝ"         # BLACKBOARD BOLD R
+<Multi_key> <equal> <C>               : "ℂ"         # BLACKBOARD BOLD C
+<Multi_key> <equal> <P>               : "ℙ"         # BLACKBOARD BOLD P
+<Multi_key> <equal> <equal>           : "≡"         # EQUIV
+<Multi_key> <exclam> <exclam>         : "¬"         # NOT
+<Multi_key> <less> <greater>          : "⇔"         # EQUIVALENT
+<Multi_key> <V> <minus>               : "∀"         # FORALL
+<Multi_key> <E> <x>                   : "∃"         # EXISTS
+<Multi_key> <ampersand> <ampersand>   : "∧"         # CONJUNCTION
+<Multi_key> <bar> <bar>               : "∨"         # DISJUNCTION
+<Multi_key> <ampersand> <braceleft>   : "∩"         # INTERSECTION
+<Multi_key> <bar> <braceleft>         : "∪"         # UNION
+<Multi_key> <d> <D>                   : "∂"         # PARTIAL
+<Multi_key> <bar> <greater>           : "↦"         # MAPSTO
+<Multi_key> <h> <minus>               : "ħ"         # HBAR
+<Multi_key> <less> <bar>              : "⟨"         # LANGLE
+<Multi_key> <greater> <bar>           : "⟩"         # RANGLE
+<Multi_key> <slash> <T>               : "⊤"         # TRUE
+<Multi_key> <slash> <F>               : "⊥"         # FALSE
+<Multi_key> <percent> <percent>       : "‰"         # PER MILLE
+<Multi_key> <period> <space>             : "ꞏ"         # INTERPUNCT
+
+<Multi_key> <bracketleft> <bracketleft>     : "⟦"   # DOUBLE LEFT BRACKET
+<Multi_key> <bracketright> <bracketright>   : "⟧"   # DOUBLE RIGHT BRACKET
+
+<Multi_key> <asciitilde> <A>                : "𝓐"         # CALLIGRAPHY A
+<Multi_key> <asciitilde> <B>                : "𝓑"         # CALLIGRAPHY B
+<Multi_key> <asciitilde> <C>                : "𝓒"         # CALLIGRAPHY C
+<Multi_key> <asciitilde> <D>                : "𝓓"         # CALLIGRAPHY D
+<Multi_key> <asciitilde> <E>                : "𝓔"         # CALLIGRAPHY E
+<Multi_key> <asciitilde> <F>                : "𝓕"         # CALLIGRAPHY F
+<Multi_key> <asciitilde> <G>                : "𝓖"         # CALLIGRAPHY G
+<Multi_key> <asciitilde> <H>                : "𝓗"         # CALLIGRAPHY H
+<Multi_key> <asciitilde> <I>                : "𝓘"         # CALLIGRAPHY I
+<Multi_key> <asciitilde> <J>                : "𝓙"         # CALLIGRAPHY J
+<Multi_key> <asciitilde> <K>                : "𝓚"         # CALLIGRAPHY K
+<Multi_key> <asciitilde> <L>                : "𝓛"         # CALLIGRAPHY L
+<Multi_key> <asciitilde> <M>                : "𝓜"         # CALLIGRAPHY M
+<Multi_key> <asciitilde> <N>                : "𝓝"         # CALLIGRAPHY N
+<Multi_key> <asciitilde> <O>                : "𝓞"         # CALLIGRAPHY O
+<Multi_key> <asciitilde> <P>                : "𝓟"         # CALLIGRAPHY P
+<Multi_key> <asciitilde> <Q>                : "𝓠"         # CALLIGRAPHY Q
+<Multi_key> <asciitilde> <R>                : "𝓡"         # CALLIGRAPHY R
+<Multi_key> <asciitilde> <S>                : "𝓢"         # CALLIGRAPHY S
+<Multi_key> <asciitilde> <T>                : "𝓣"         # CALLIGRAPHY T
+<Multi_key> <asciitilde> <U>                : "𝓤"         # CALLIGRAPHY U
+<Multi_key> <asciitilde> <V>                : "𝓥"         # CALLIGRAPHY V
+<Multi_key> <asciitilde> <W>                : "𝓦"         # CALLIGRAPHY W
+<Multi_key> <asciitilde> <X>                : "𝓧"         # CALLIGRAPHY X
+<Multi_key> <asciitilde> <Y>                : "𝓨"         # CALLIGRAPHY Y
+<Multi_key> <asciitilde> <Z>                : "𝓩"         # CALLIGRAPHY Z
