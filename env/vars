@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+# path
+export PATH="~/bin:~/.cargo/bin:~/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:~/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.gem/ruby/2.7.0/bin"
+
+# session at ENS
+export DPTSSH='villani@ssh.dptinfo.ens-cachan.fr'
+
+# ctrl+o in fzf opens selected file in vim
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
+
+# edition
+export EDITOR=gedit
+export VISUAL=vim
+
+# GPG (signature)
+export GPG_TTY="$(tty)"
+
+# color tweak for exa
+export EXA_COLORS="*.mp3=35"
+
+# intel quartus cfg
+export QSYS_ROOTDIR="/home/vanille/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
+
+# exercism cfg
+export BATS_RUN_SKIPPED=true
