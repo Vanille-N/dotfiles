@@ -16,3 +16,20 @@ alias 'pacrem'='sudo pacman -Rncs'
 alias 'rust++'='rustup update'
 alias 'gitrem'='git rm --cache -rf'
 alias 'pac-clean'='paccache -rvk3'
+
+# apps
+alias 'btm'='btm -a'
+alias 'man'='man -P "less -Q"'
+alias 'ffeh'='feh -F'
+alias 'less'='less -Q'
+
+# utils
+alias 'icat'='kitty +kitten icat'
+alias 'xclip'="xclip -selection c"
+alias 'gitnuke'='fts_gitignore_nuke'
+alias 'touchall'='find . -exec touch {} +'
+alias 'cx'='chmod +x'
+
+# mount
+alias 'mountusb'='mount -o gid=users,fmask=113,dmask=002'
+alias 'mountphone'='aft-mtp-mount'
