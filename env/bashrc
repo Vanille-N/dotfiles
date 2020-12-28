@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# env setup
+HISTCONTROL=ignoreboth
+HISTFILESIZE=2000
+HISTSIZE=1000
+shopt -s histappend
+
+shopt -s checkwinsize # update `tput lines` & `tput cols` after each command
+shopt -s globstar # wildcard behavior
+
+# load external files
+CFGDIR="/home/vanille/.config/env"
+for file in "alias" "vars" "funcs"; do
+    if [ -f $CFGDIR/$file ]; then
+        . $CFGDIR/$file
+    else
+        echo "$CFGDIR/$file not found"
+    fi
+done
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+gpgconf --launch gpg-agent
+
+eval `opam config env`
+
+eval "$(starship init bash)"
