@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. ~/.config/env/keyboard
+
+# Beep sound removed
+amixer set "Beep" 0% mute
+
+# Dual screen management
+xrandr --output VGA1 --right-of LVDS1 --auto
+
+# Set wallpaper
+feh --bg-fill ~/.config/wallpapers/valley.jpg
+
+numlockx
+xss-lock --transfer-sleep-lock -- betterlockscreen -l & disown
