@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+# explore
+alias 'ls'='exa'
+alias 'll'='exa -lF -h'
+alias 'la'='exa -a'
+alias 'lla'='exa -la'
+alias 'fda'='fd -IH'
+alias 'rga'='rg -uuu'
+alias 'preview'='fzf --preview "bat --color \"always\" {}"'
+
+# updates
+alias 'pacs'='sudo pacman -S'
+alias 'pacup'='sudo pacman -Syu'
+alias 'pacrem'='sudo pacman -Rncs'
+alias 'rust++'='rustup update'
+alias 'gitrem'='git rm --cache -rf'
+alias 'pac-clean'='paccache -rvk3'
