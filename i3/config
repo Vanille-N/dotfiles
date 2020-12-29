@@ -123,3 +123,26 @@ set $ws6 "6:<span font='InupiaqNumbers 11'></span>"
 set $ws7 "7:<span font='InupiaqNumbers 11'></span>"
 set $ws8 "8:<span font='InupiaqNumbers 11'></span>"
 set $ws9 "9:<span font='InupiaqNumbers 11'></span>"
+
+# Workspace jump keys
+set $k0 KP_0
+set $k1 KP_1
+set $k2 KP_2
+set $k3 KP_3
+set $k4 KP_4
+set $k5 KP_5
+set $k6 KP_6
+set $k7 KP_7
+set $k8 KP_8
+set $k9 KP_9
+set $k0alt KP_Insert
+set $k1alt KP_End
+set $k2alt KP_Down
+set $k3alt KP_Next
+set $k4alt KP_Left
+set $k5alt KP_Begin
+set $k6alt KP_Right
+set $k7alt KP_Home
+set $k8alt KP_Up
+set $k9alt KP_Prior
+
