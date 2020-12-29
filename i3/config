@@ -51,3 +51,18 @@ bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 # Brightness control in default mode (see resize mode for more brightness control)
 bindsym XF86MonBrightnessUp exec light -A 20
 bindsym XF86MonBrightnessDown exec light -U 20
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Take a screenshot
+bindsym Print exec flameshot gui
+
+# Kill focused window
+bindsym $mod+w kill
+bindsym $mod+BackSpace kill
+bindsym $mod+Delete kill
+
