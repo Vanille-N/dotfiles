@@ -16,3 +16,12 @@ for_window [class=".*"] border pixel 2
 # NetworkManager floats
 for_window [class="Nm-connection-editor"] floating enable
 
+# Border theme
+# type                  border  bg      text    indic
+client.focused          #da9d0f #283b00 #ffffff #b8bb26   #b8bb26
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #800000 #ffffff #800000   #800000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
