@@ -157,3 +157,27 @@ workspace $ws6 output $monitor_ext
 workspace $ws7 output $monitor_main
 workspace $ws8 output $monitor_ext
 workspace $ws9 output $monitor_main
+
+# Switch to workspace
+bindsym $mod+Mod2+$k0 workspace $ws0
+bindsym $mod+Mod2+$k1 workspace $ws1
+bindsym $mod+Mod2+$k2 workspace $ws2
+bindsym $mod+Mod2+$k3 workspace $ws3
+bindsym $mod+Mod2+$k4 workspace $ws4
+bindsym $mod+Mod2+$k5 workspace $ws5
+bindsym $mod+Mod2+$k6 workspace $ws6
+bindsym $mod+Mod2+$k7 workspace $ws7
+bindsym $mod+Mod2+$k8 workspace $ws8
+bindsym $mod+Mod2+$k9 workspace $ws9
+
+# Move focused container to workspace
+bindsym $mod+Shift+Mod2+$k1alt move container to workspace $ws1
+bindsym $mod+Shift+Mod2+$k2alt move container to workspace $ws2
+bindsym $mod+Shift+Mod2+$k3alt move container to workspace $ws3
+bindsym $mod+Shift+Mod2+$k4alt move container to workspace $ws4
+bindsym $mod+Shift+Mod2+$k5alt move container to workspace $ws5
+bindsym $mod+Shift+Mod2+$k6alt move container to workspace $ws6
+bindsym $mod+Shift+Mod2+$k7alt move container to workspace $ws7
+bindsym $mod+Shift+Mod2+$k8alt move container to workspace $ws8
+bindsym $mod+Shift+Mod2+$k9alt move container to workspace $ws9
+bindsym $mod+Shift+Mod2+$k0alt move container to workspace $ws0
