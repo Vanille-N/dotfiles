@@ -181,3 +181,16 @@ bindsym $mod+Shift+Mod2+$k7alt move container to workspace $ws7
 bindsym $mod+Shift+Mod2+$k8alt move container to workspace $ws8
 bindsym $mod+Shift+Mod2+$k9alt move container to workspace $ws9
 bindsym $mod+Shift+Mod2+$k0alt move container to workspace $ws0
+
+# Block drawing characters
+bindsym --release Mod1+Mod2+KP_1 exec --no-startup-id ~/.config/scripts/alt-paste "┐"
+bindsym --release Mod1+Mod2+KP_2 exec --no-startup-id ~/.config/scripts/alt-paste "┬"
+bindsym --release Mod1+Mod2+KP_3 exec --no-startup-id ~/.config/scripts/alt-paste "┌"
+bindsym --release Mod1+Mod2+KP_4 exec --no-startup-id ~/.config/scripts/alt-paste "┤"
+bindsym --release Mod1+Mod2+KP_5 exec --no-startup-id ~/.config/scripts/alt-paste "─"
+bindsym --release Mod1+Mod2+KP_6 exec --no-startup-id ~/.config/scripts/alt-paste "├"
+bindsym --release Mod1+Mod2+KP_7 exec --no-startup-id ~/.config/scripts/alt-paste "┘"
+bindsym --release Mod1+Mod2+KP_8 exec --no-startup-id ~/.config/scripts/alt-paste "┴"
+bindsym --release Mod1+Mod2+KP_9 exec --no-startup-id ~/.config/scripts/alt-paste "└"
+bindsym --release Mod1+Mod2+KP_Divide exec --no-startup-id ~/.config/scripts/alt-paste "│"
+bindsym --release Mod1+Mod2+KP_Add exec --no-startup-id ~/.config/scripts/alt-paste "┼"
