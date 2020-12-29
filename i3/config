@@ -107,3 +107,19 @@ bindsym $mod+g focus parent
 
 # focus the child container
 bindsym $mod+z exec ~/.config/scripts/unicode-menu
+
+# Multi-monitor management
+set $monitor_main LVDS1
+set $monitor_ext VGA1
+
+# Workspace names
+set $ws0 "0:<span font='InupiaqNumbers 11'></span>"
+set $ws1 "1:<span font='InupiaqNumbers 11'></span>"
+set $ws2 "2:<span font='InupiaqNumbers 11'></span>"
+set $ws3 "3:<span font='InupiaqNumbers 11'></span>"
+set $ws4 "4:<span font='InupiaqNumbers 11'></span>"
+set $ws5 "5:<span font='InupiaqNumbers 11'></span>"
+set $ws6 "6:<span font='InupiaqNumbers 11'></span>"
+set $ws7 "7:<span font='InupiaqNumbers 11'></span>"
+set $ws8 "8:<span font='InupiaqNumbers 11'></span>"
+set $ws9 "9:<span font='InupiaqNumbers 11'></span>"
