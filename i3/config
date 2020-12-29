@@ -66,3 +66,9 @@ bindsym $mod+w kill
 bindsym $mod+BackSpace kill
 bindsym $mod+Delete kill
 
+# Program launcher
+bindsym $mod+l exec ~/.config/scripts/apps-menu
+
+# Open system menu
+bindsym $mod+m exec ~/.config/rofi/powermenu/sys-menu.sh
+
