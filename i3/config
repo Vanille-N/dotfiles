@@ -216,3 +216,27 @@ for_window [class="Messenger"] move window to workspace $ws6
 #for_window [class="Info"] move window to workspace $ws2
 #for_window [class="Learn"] move window to workspace $ws7
 #for_window [class="Bank"] move window to workspace $ws4
+
+# Resize windows
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Up resize grow height 5 px or 5 ppt
+    bindsym Down resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+
+    bindsym $mod+Left focus left
+    bindsym $mod+Right focus right
+    bindsym $mod+Up focus up
+    bindsym $mod+Down focus down
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+
+    # resize mode also controls brightness
+    bindsym plus exec light -A 20
+    bindsym minus exec light -U 20
+}
+
