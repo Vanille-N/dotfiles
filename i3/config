@@ -244,3 +244,9 @@ mode "resize" {
 bindsym $mod+Shift+v exec --no-startup-id ~/.config/scripts/volume.sh
 for_window [class="^Mixer$"] floating enable; [class="^Mixer$"] move position 650 60
 for_window [class="^Visualizer"] floating enable; [class="^Visualizer$"] move position 30 30
+
+# NM apps : nmtui / nm-connection-editor
+bindsym $mod+Shift+n exec --no-startup-id kitty --class Watcher -e nmtui
+bindsym $mod+Shift+t exec --no-startup-id nm-connection-editor
+for_window [class="^Watcher$"] floating enable
+
