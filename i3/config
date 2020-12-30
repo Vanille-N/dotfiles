@@ -11,7 +11,7 @@ set $mod Mod4
 font pango: JetBrains Mono, NotoFontsEmoji 9
 
 # Border size
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 
 # NetworkManager floats
 for_window [class="Nm-connection-editor"] floating enable
@@ -194,3 +194,12 @@ bindsym --release Mod1+Mod2+KP_8 exec --no-startup-id ~/.config/scripts/alt-past
 bindsym --release Mod1+Mod2+KP_9 exec --no-startup-id ~/.config/scripts/alt-paste "└"
 bindsym --release Mod1+Mod2+KP_Divide exec --no-startup-id ~/.config/scripts/alt-paste "│"
 bindsym --release Mod1+Mod2+KP_Add exec --no-startup-id ~/.config/scripts/alt-paste "┼"
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+# Restart i3 in-place
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
