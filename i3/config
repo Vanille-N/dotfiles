@@ -247,3 +247,7 @@ bindsym $mod+Shift+t exec --no-startup-id ~/.config/scripts/network.sh
 for_window [class="^Scanner$"] floating enable; [class="^Scanner$"] move position 20 20
 for_window [class="Nm-connection-editor"] floating enable; [class="Nm-connection-editor"] move position 700 100
 
+# Resource apps : btm + htop
+bindsym $mod+Shift+h exec --no-startup-id ~/.config/scripts/resources.sh
+for_window [class="^Bottom$"] floating enable; [class="^Bottom$"] move position 20 15
+for_window [class="^Top$"] floating enable; [class="^Top$"] move position 600 80
