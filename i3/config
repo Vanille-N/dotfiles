@@ -240,3 +240,7 @@ mode "resize" {
     bindsym minus exec light -U 20
 }
 
+# Volume apps : alsamixer + vis
+bindsym $mod+Shift+v exec --no-startup-id ~/.config/scripts/volume.sh
+for_window [class="^Mixer$"] floating enable; [class="^Mixer$"] move position 650 60
+for_window [class="^Visualizer"] floating enable; [class="^Visualizer$"] move position 30 30
