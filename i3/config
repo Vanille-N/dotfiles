@@ -203,3 +203,16 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Bind apps to workspaces
+for_window [class="Atom"] move window to workspace $ws0
+for_window [class="discord"] move window to workspace $ws9
+for_window [class="Thunderbird"] move window to workspace $ws6
+#assign [title=".*Vanille.*"] $ws3
+#for_window [class="Code"] move window to workspace $ws3
+#for_window [class="Fun"] move window to workspace $ws8
+#for_window [class="Docs"] move window to workspace $ws7
+for_window [class="Messenger"] move window to workspace $ws6
+#for_window [class="Music"] move window to workspace $ws5
+#for_window [class="Info"] move window to workspace $ws2
+#for_window [class="Learn"] move window to workspace $ws7
+#for_window [class="Bank"] move window to workspace $ws4
