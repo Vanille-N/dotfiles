@@ -11,11 +11,11 @@ alias 'preview'='fzf --preview "bat --color \"always\" {}"'
 
 # updates
 alias 'pacs'='sudo pacman -S'
-alias 'pacup'='sudo pacman -Syu'
-alias 'pacrem'='sudo pacman -Rncs'
+alias 'pac++'='sudo pacman -Syu'
+alias 'pac--'='sudo pacman -Rncs'
 alias 'rust++'='rustup update'
-alias 'gitrem'='git rm --cache -rf'
-alias 'pac-clean'='paccache -rvk3'
+alias 'git--'='git rm --cache -rf'
+alias 'cleanpac'='paccache -rvk3'
 
 # apps
 alias 'btm'='btm -a'
