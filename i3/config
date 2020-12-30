@@ -13,9 +13,6 @@ font pango: JetBrains Mono, NotoFontsEmoji 9
 # Border size
 for_window [class=".*"] border pixel 1
 
-# NetworkManager floats
-for_window [class="Nm-connection-editor"] floating enable
-
 # Border theme
 # type                  border  bg      text    indic
 client.focused          #da9d0f #283b00 #ffffff #b8bb26   #b8bb26
@@ -246,7 +243,7 @@ for_window [class="^Mixer$"] floating enable; [class="^Mixer$"] move position 65
 for_window [class="^Visualizer"] floating enable; [class="^Visualizer$"] move position 30 30
 
 # NM apps : nmtui / nm-connection-editor
-bindsym $mod+Shift+n exec --no-startup-id kitty --class Watcher -e nmtui
-bindsym $mod+Shift+t exec --no-startup-id nm-connection-editor
-for_window [class="^Watcher$"] floating enable
+bindsym $mod+Shift+t exec --no-startup-id ~/.config/scripts/network.sh
+for_window [class="^Scanner$"] floating enable; [class="^Scanner$"] move position 20 20
+for_window [class="Nm-connection-editor"] floating enable; [class="Nm-connection-editor"] move position 700 100
 
