@@ -251,3 +251,24 @@ for_window [class="Nm-connection-editor"] floating enable; [class="Nm-connection
 bindsym $mod+Shift+h exec --no-startup-id ~/.config/scripts/resources.sh
 for_window [class="^Bottom$"] floating enable; [class="^Bottom$"] move position 20 15
 for_window [class="^Top$"] floating enable; [class="^Top$"] move position 600 80
+
+# Workspace bar + status bar
+bar {
+    separator_symbol "│"
+    position bottom
+    font pango: JetBrains Mono Bold 9
+    strip_workspace_numbers yes
+    status_command i3status -c /home/vanille/.config/i3status/config
+    tray_output none
+
+     colors {
+        background #1d1f21
+        statusline #1d1f21
+        separator #FFFFFF
+
+        #                       border   background      text
+        focused_workspace       #002255  #00BBFF         #000000
+        inactive_workspace      #998899  #110011         #FFFFFF
+        urgent_workspace        #000000  #FFBB00         #990000
+    }
+}
