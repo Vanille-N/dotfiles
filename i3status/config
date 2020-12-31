@@ -41,3 +41,18 @@ ethernet _first_ {
     format_down = "<span foreground='#fb4934'> <span font='Iosevka Nerd Font 12'> </span></span>"
 }
 
+cpu_usage {
+    format = "<span foreground='#fabd2d'> <span font='Iosevka Nerd Font 12'>﬙ </span>%usage </span>"
+    max_threshold = 75
+    format_above_threshold = "<span background='#cc241d' foreground='#ffffff'> <span font='Iosevka Nerd Font 12'>﬙ </span>%usage </span>"
+}
+
+battery all {
+    format = "%status%percentage (%remaining) </span>"
+    integer_battery_capacity = true
+    status_full = "<span foreground='#b8bb26'> <span font='Iosevka Nerd Font 12'> </span>"
+    status_unk = "<span foreground='#fabd2d'> <span font='Iosevka Nerd Font 12'> </span>"
+    status_chr = "<span foreground='#fe8019'> <span font='Iosevka Nerd Font 12'> </span>"
+    status_bat = "<span background='#cc241d' foreground='#ffffff'> <span font='Iosevka Nerd Font 12'> </span>"
+}
+
