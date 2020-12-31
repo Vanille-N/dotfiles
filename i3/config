@@ -272,3 +272,15 @@ bar {
         urgent_workspace        #000000  #FFBB00         #990000
     }
 }
+
+# Notifications
+exec --no-startup-id dunst
+
+# Compositor
+exec_always --no-startup-id pkill picom; picom --no-use-damage --config ~/.config/picom.conf
+
+# Some more setup
+exec_always --no-startup-id ~/.xinitrc
+
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id pkill volumeicon; volumeicon
