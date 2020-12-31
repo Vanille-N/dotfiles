@@ -56,3 +56,14 @@ battery all {
     status_bat = "<span background='#cc241d' foreground='#ffffff'> <span font='Iosevka Nerd Font 12'> </span>"
 }
 
+
+memory {
+    format = "<span foreground='#83a598'> <span font='Iosevka Nerd Font 12'> </span>%used::%available </span>"
+    threshold_degraded = "1G"
+    format_degraded = "<span background='#cc241d' foreground='#ffffff'> <span font='Iosevka Nerd Font 12'> </span>%available </span>"
+}
+
+tztime local {
+    format = "<span foreground='#d3869b'> <span font='Iosevka Nerd Font 12'> </span>%time </span>"
+    format_time = "%Y-%m-%d (%a) %H:%M"
+}
