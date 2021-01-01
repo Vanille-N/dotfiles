@@ -1,6 +1,7 @@
 #!/bin/bash
 
-kitty --class Scanner --config ~/.config/kitty/kitty.conf \
+kitty --class Scanner \
+    --config ~/.config/kitty/kitty.conf \
     --override initial_window_width=90c \
     -e ~/.config/scripts/nm.sh &
 cpid=$!
