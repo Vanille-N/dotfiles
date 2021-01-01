@@ -55,3 +55,17 @@ style = "bold yellow"
 [[battery.display]]
 threshold = 50
 style = "bold green"
+
+# timer
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+
+[perl]
+disabled = true
+
+[directory]
+truncation_symbol = "…/"
+
+[status]
+disabled = false
