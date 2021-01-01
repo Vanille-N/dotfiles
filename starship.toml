@@ -37,3 +37,21 @@ $battery\
 $time\
 $status\
 $character"""
+
+# prompt character
+[character]
+success_symbol = "[█](bold green)"
+error_symbol = "[█](bold red)"
+
+# battery warning
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 50
+style = "bold green"
