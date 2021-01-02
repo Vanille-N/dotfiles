@@ -1,0 +1,5 @@
+#!/bin/bash
+
+xdotool keyup Alt
+xdotool type "$1"
+xdotool keydown Alt
