@@ -88,3 +88,55 @@ $(printf "\\u200E")ﭮ Discord
  Godbolt
  Goubault"
 )"
+
+# The Discord icon (U+F06E) is an arabic character, so it triggers right-to-left text display
+# To prevent this we add the special character U+200E which forces left-to-right
+
+#alias firefox='firefox --no-remote -P default'
+# TODO: figure out how to open new window with different class
+
+case "$MENU" in
+  *GitHub) qutebrowser https://www.github.com/Vanille-N & ;;
+  *Reddit) qutebrowser https://www.reddit.com & ;;
+  *Youtube) qutebrowser https://www.youtube.com & ;;
+  *AUR) qutebrowser https://aur.archlinux.org & ;;
+  *StackOverflow) qutebrowser https://stackoverflow.com & ;;
+  *Codeforces) qutebrowser https://codeforces.com & ;;
+  *Messenger) chromium --class=Messenger https://facebook.com/messages & ;;
+  *Firefox) firefox & ;;
+  *Qutebrowser) qutebrowser & ;;
+  *Chromium) chromium & ;;
+  *Thunderbird) thunderbird & ;;
+  *Atom) atom & ;;
+  *Discord) discord & ;;
+  *Gimp) gimp & ;;
+  *Overleaf) qutebrowser https://www.overleaf.com/project & ;;
+  *Crates) qutebrowser https://www.crates.io/dashboard & ;;
+  *Downloader) qutebrowser https://ytmp3.cc/en13/ & ;;
+  *Wikipedia) qutebrowser https://www.wikipedia.com & ;;
+  *Playground) qutebrowser https://play.rust-lang.org/ & ;;
+  *Dictionary) qutebrowser https://www.dictionary.com/ & ;;
+  *Mathcha) qutebrowser https://www.mathcha.io/editor & ;;
+  *DeTeXify) qutebrowser https://detexify.kirelabs.org/classify.html & ;;
+  *Classes) qutebrowser www.dptinfo.ens-cachan.fr/L3/edts1.php & ;;
+  *BlackBoard) qutebrowser https://eu.bbcollab.com/collab/ui/session/guest/2017ae38ceb241d0940dfbf04189903a & ;;
+  *English) qutebrowser https://app.slack.com/client/T01B57EQJMQ/C01B57EQVDY & ;;
+  *MPRI) qutebrowser https://admin.dptinfo.ens-cachan.fr/serveur_pedagogique/accueil.php & ;;
+  *Postale) qutebrowser https://www.labanquepostale.fr/ & ;;
+  *Gen) qutebrowser https://particuliers.societegenerale.fr/ & ;;
+  *Manga) qutebrowser https://mangapark.net/ & ;;
+  *Izly) qutebrowser https://mon-espace.izly.fr & ;;
+  *Shell) qutebrowser https://explainshell.com & ;;
+  *Exercism) qutebrowser https://exercism.io/my/tracks & ;;
+  *Godbolt) qutebrowser https://godbolt.org & ;;
+  *Goubault) qutebrowser https://eu.bbcollab.com/guest/8fa2a723e68b4cbca6e8d1c2359ba2fe & ;;
+esac
+
+# More Options
+# -fullscreen \
+
+# Theming help
+# color window = background, border, separator
+# color normal = background, foreground, background-alt, highlight-background, highlight-foreground
+# color active = background, foreground, background-alt, highlight-background, highlight-foreground
+# color urgent = background, foreground, background-alt, highlight-background, highlight-foreground
