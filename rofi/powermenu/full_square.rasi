@@ -8,14 +8,14 @@
  */
 
 configuration {
-	font:							"JetBrains Mono Nerd Font 14";
+    font:                           "JetBrains Mono Nerd Font 14";
     show-icons:                     false;
-	icon-theme: 					"Papirus";
+    icon-theme:                     "Papirus";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     true;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar:                 true;
+    sidebar-mode:                   false;
 }
 
 @import "styles/colors.rasi"
@@ -28,28 +28,28 @@ window {
 }
 
 prompt {
-    enabled: 						true;
+    enabled:                        true;
     padding:                        1% 1% 1% 0%;
-	background-color: 				@selected;
-	text-color: 					@foreground;
+    background-color:               @selected;
+    text-color:                     @foreground;
 }
 
 textbox-prompt-colon {
-	expand: 						false;
-	str: 							"System |";
-	background-color: 				@selected;
-	text-color: 					@foreground;
+    expand:                         false;
+    str:                            "System |";
+    background-color:               @selected;
+    text-color:                     @foreground;
     padding:                        1% 0.5% 1% 0.5%;
 }
 
 inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
+    children:                       [ textbox-prompt-colon, prompt ];
     background-color:               @selected;
     text-color:                     @foreground;
     expand:                         false;
-    border:                  		0px 0px 5px 5px;
+    border:                         0px 0px 5px 5px;
     border-radius:                  0px;
-    border-color:                  	@border;
+    border-color:                   @border;
     margin:                         0% 23.5% 0% 0%;
     padding:                        0.5%;
     position:                       center;
@@ -81,7 +81,7 @@ element {
 }
 
 element-text {
-	font:							"feather 64";
+    font:                           "feather 64";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
@@ -104,9 +104,9 @@ element alternate.active {
 element selected {
     background-color:               @selected;
     text-color:                     @foreground;
-    border:                  		0px 0px 5px 5px;
+    border:                         0px 0px 5px 5px;
     border-radius:                  0px;
-    border-color:                  	@border;
+    border-color:                   @border;
 }
 
 element selected.urgent {
