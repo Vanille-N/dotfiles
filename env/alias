@@ -29,7 +29,9 @@ alias 'xclip'="xclip -selection c"
 alias 'gitnuke'='fts_gitignore_nuke'
 alias 'touchall'='find . -exec touch {} +'
 alias 'cx'='chmod +x'
+alias 'hsync'='rsync -rhP'
 
 # mount
 alias 'mountusb'='mount -o gid=users,fmask=113,dmask=002'
 alias 'mountphone'='aft-mtp-mount'
+alias 'ripcd'='cdda2wav -vall cddb=0 speed=4 -paranoia paraopts=proof -B -D /dev/sr0'
