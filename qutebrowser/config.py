@@ -2,12 +2,22 @@
 # Base16 qutebrowser template by theova
 # Gruvbox dark, hard scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-startpage = "/home/vanille/.config/mozilla/index.private.html"
+## This is here so configs done via the GUI are still loaded.
+## Remove it to not load settings done via the GUI.
+config.load_autoconfig()
 
+startpage = "/home/vanille/.config/mozilla/index.private.html"
 config.set("colors.webpage.darkmode.enabled", True)
-config.set("url.start_pages", "file://{}".format(startpage))
-config.set("url.default_page", "file://{}".format(startpage))
 config.set("colors.webpage.bg", "black")
+
+## Aliases for commands. The keys of the given dictionary are the
+## aliases, while the values are the commands they map to.
+## Type: Dict
+c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
+
+## Background color of the completion widget category headers.
+## Type: QssColor
+c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #888888, stop:1 #505050)'
 
 base00 = "#1d2021"
 base01 = "#3c3836"
@@ -299,6 +309,3 @@ c.colors.tabs.selected.even.fg = base05
 # Background color of selected even tabs.
 c.colors.tabs.selected.even.bg = base02
 
-# Background color for webpages if unset (or empty to use the theme's
-# color).
-# c.colors.webpage.bg = base00
