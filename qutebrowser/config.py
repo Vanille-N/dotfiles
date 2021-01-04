@@ -309,3 +309,36 @@ c.colors.tabs.selected.even.fg = base05
 # Background color of selected even tabs.
 c.colors.tabs.selected.even.bg = base02
 
+## Which images to apply dark mode to. WARNING: With QtWebengine 5.15.0,
+## this setting can cause frequent renderer process crashes due to a
+## https://codereview.qt-project.org/c/qt/qtwebengine-
+## chromium/+/304211[bug in Qt]. Thus, the 'smart' setting is ignored and
+## treated like 'never' in that case.
+## Type: String
+## Valid values:
+##   - always: Apply dark mode filter to all images.
+##   - never: Never apply dark mode filter to any images.
+##   - smart: Apply dark mode based on image content.
+c.colors.webpage.darkmode.policy.images = 'never'
+
+## Which pages to apply dark mode to.
+## Type: String
+## Valid values:
+##   - always: Apply dark mode filter to all frames, regardless of content.
+##   - smart: Apply dark mode filter to frames based on background color.
+c.colors.webpage.darkmode.policy.page = 'smart'
+
+## Threshold for inverting background elements with dark mode. Background
+## elements with brightness above this threshold will be inverted, and
+## below it will be left as in the original, non-dark-mode page. Set to
+## 256 to never invert the color or to 0 to always invert it. Note: This
+## behavior is the opposite of `colors.webpage.darkmode.threshold.text`!
+## Type: Int
+c.colors.webpage.darkmode.threshold.background = 100
+
+## Threshold for inverting text with dark mode. Text colors with
+## brightness below this threshold will be inverted, and above it will be
+## left as in the original, non-dark-mode page. Set to 256 to always
+## invert text color or to 0 to never invert text color.
+## Type: Int
+c.colors.webpage.darkmode.threshold.text = 156
