@@ -342,3 +342,118 @@ c.colors.webpage.darkmode.threshold.background = 100
 ## invert text color or to 0 to never invert text color.
 ## Type: Int
 c.colors.webpage.darkmode.threshold.text = 156
+
+## Automatically start playing `<video>` elements. Note: On Qt < 5.11,
+## this option needs a restart and does not support URL patterns.
+## Type: Bool
+c.content.autoplay = False
+
+## Duration (in milliseconds) to wait before removing finished downloads.
+## If set to -1, downloads are never removed.
+## Type: Int
+c.downloads.remove_finished = 2000
+
+## Characters used for hint strings.
+## Type: UniqueCharString
+c.hints.chars = 'aoeusnth'
+
+## Leave hint mode when starting a new page load.
+## Type: Bool
+c.hints.leave_on_load = False
+
+## Minimum number of characters used for hint strings.
+## Type: Int
+c.hints.min_chars = 1
+
+## Padding (in pixels) for hints.
+## Type: Padding
+c.hints.padding = {'top': 0, 'bottom': 0, 'left': 3, 'right': 3}
+
+## Rounding radius (in pixels) for the edges of hints.
+## Type: Int
+c.hints.radius = 3
+
+## Automatically enter insert mode if an editable element is focused
+## after loading the page.
+## Type: Bool
+c.input.insert_mode.auto_load = True
+
+## How to open links in an existing instance if a new one is launched.
+## This happens when e.g. opening a link from a terminal. See
+## `new_instance_open_target_window` to customize in which window the
+## link is opened in.
+## Type: String
+## Valid values:
+##   - tab: Open a new tab in the existing window and activate the window.
+##   - tab-bg: Open a new background tab in the existing window and activate the window.
+##   - tab-silent: Open a new tab in the existing window without activating the window.
+##   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
+##   - window: Open in a new window.
+##   - private-window: Open in a new private window.
+c.new_instance_open_target = 'window'
+
+## When to show the statusbar.
+## Type: String
+## Valid values:
+##   - always: Always show the statusbar.
+##   - never: Always hide the statusbar.
+##   - in-mode: Show the statusbar when in modes other than normal mode.
+c.statusbar.show = 'always'
+
+## List of widgets displayed in the statusbar.
+## Type: List of String
+## Valid values:
+##   - url: Current page URL.
+##   - scroll: Percentage of the current page position like `10%`.
+##   - scroll_raw: Raw percentage of the current page position like `10`.
+##   - history: Display an arrow when possible to go back/forward in history.
+##   - tabs: Current active tab, e.g. `2`.
+##   - keypress: Display pressed keys when composing a vi command.
+##   - progress: Progress bar for the current page loading.
+c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
+
+## How to behave when the last tab is closed.
+## Type: String
+## Valid values:
+##   - ignore: Don't do anything.
+##   - blank: Load a blank page.
+##   - startpage: Load the start page.
+##   - default-page: Load the default page.
+##   - close: Close the window.
+c.tabs.last_close = 'close'
+
+## When to show the tab bar.
+## Type: String
+## Valid values:
+##   - always: Always show the tab bar.
+##   - never: Always hide the tab bar.
+##   - multiple: Hide the tab bar if only one tab is open.
+##   - switching: Show the tab bar when switching tabs.
+c.tabs.show = 'never'
+
+## Duration (in milliseconds) to show the tab bar before hiding it when
+## tabs.show is set to 'switching'.
+## Type: Int
+c.tabs.show_switching_delay = 800
+
+## Open a new window for every tab.
+## Type: Bool
+c.tabs.tabs_are_windows = True
+
+## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+## for a blank page.
+## Type: FuzzyUrl
+c.url.default_page = "file://{}".format(startpage)
+
+## Page(s) to open at the start.
+## Type: List of FuzzyUrl, or FuzzyUrl
+c.url.start_pages = ["file://{}".format(startpage)]
+
+## When/how to show the scrollbar.
+## Type: String
+## Valid values:
+##   - always: Always show the scrollbar.
+##   - never: Never show the scrollbar.
+##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
+##   - overlay: Show an overlay scrollbar. With Qt < 5.11 or on macOS, this is unavailable and equal to `when-searching`; with the QtWebKit backend, this is equal to `never`. Enabling/disabling overlay scrollbars requires a restart.
+c.scrolling.bar = 'overlay'
