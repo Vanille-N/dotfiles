@@ -78,6 +78,7 @@ $(printf "\\u200E")ﭮ Discord
  Classes
  BlackBoard
  English
+ Windish
  MPRI
  Banque Postale
  Société Gen
@@ -110,7 +111,7 @@ case "$MENU" in
   *Atom) atom & ;;
   *Discord) discord & ;;
   *Gimp) gimp & ;;
-  *Overleaf) qutebrowser https://www.overleaf.com/project & ;;
+  *Overleaf) firefox https://www.overleaf.com/project & ;;
   *Crates) qutebrowser https://www.crates.io/dashboard & ;;
   *Downloader) qutebrowser https://ytmp3.cc/en13/ & ;;
   *Wikipedia) qutebrowser https://www.wikipedia.com & ;;
@@ -119,17 +120,18 @@ case "$MENU" in
   *Mathcha) qutebrowser https://www.mathcha.io/editor & ;;
   *DeTeXify) qutebrowser https://detexify.kirelabs.org/classify.html & ;;
   *Classes) qutebrowser www.dptinfo.ens-cachan.fr/L3/edts1.php & ;;
-  *BlackBoard) qutebrowser https://eu.bbcollab.com/collab/ui/session/guest/2017ae38ceb241d0940dfbf04189903a & ;;
-  *English) qutebrowser https://app.slack.com/client/T01B57EQJMQ/C01B57EQVDY & ;;
+  *BlackBoard) firefox https://eu.bbcollab.com/collab/ui/session/guest/2017ae38ceb241d0940dfbf04189903a & ;;
+  *English) firefox https://app.slack.com/client/T01B57EQJMQ/C01B57EQVDY & ;;
+  *Windish) firefox https://eu.bbcollab.com/guest/52223f083b69475e8e4b129231c6295c & ;;
   *MPRI) qutebrowser https://admin.dptinfo.ens-cachan.fr/serveur_pedagogique/accueil.php & ;;
-  *Postale) qutebrowser https://www.labanquepostale.fr/ & ;;
-  *Gen) qutebrowser https://particuliers.societegenerale.fr/ & ;;
+  *Postale) firefox https://www.labanquepostale.fr/ & ;;
+  *Gen) firefox https://particuliers.societegenerale.fr/ & ;;
   *Manga) qutebrowser https://mangapark.net/ & ;;
   *Izly) qutebrowser https://mon-espace.izly.fr & ;;
   *Shell) qutebrowser https://explainshell.com & ;;
   *Exercism) qutebrowser https://exercism.io/my/tracks & ;;
   *Godbolt) qutebrowser https://godbolt.org & ;;
-  *Goubault) qutebrowser https://eu.bbcollab.com/guest/8fa2a723e68b4cbca6e8d1c2359ba2fe & ;;
+  *Goubault) firefox https://eu.bbcollab.com/guest/8fa2a723e68b4cbca6e8d1c2359ba2fe & ;;
 esac
 
 # More Options
