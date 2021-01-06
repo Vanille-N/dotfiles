@@ -319,7 +319,7 @@ c.colors.tabs.selected.even.bg = base02
 ##   - always: Apply dark mode filter to all images.
 ##   - never: Never apply dark mode filter to any images.
 ##   - smart: Apply dark mode based on image content.
-c.colors.webpage.darkmode.policy.images = 'never'
+c.colors.webpage.darkmode.policy.images = 'smart'
 
 ## Which pages to apply dark mode to.
 ## Type: String
@@ -353,6 +353,94 @@ c.content.autoplay = False
 ## Type: Int
 c.downloads.remove_finished = 2000
 
+## Default font size to use. Whenever "default_size" is used in a font
+## setting, it's replaced with the size listed here. Valid values are
+## either a float value with a "pt" suffix, or an integer value with a
+## "px" suffix.
+## Type: String
+c.fonts.default_size = '10pt'
+
+## Font used for the downloadbar.
+## Type: Font
+c.fonts.downloads = 'default_size default_family'
+
+## Font used for the hints.
+## Type: Font
+c.fonts.hints = 'bold 8pt default_family'
+
+## Font used in the keyhint widget.
+## Type: Font
+c.fonts.keyhint = 'default_size default_family'
+
+## Font used for error messages.
+## Type: Font
+c.fonts.messages.error = 'default_size default_family'
+
+## Font used for info messages.
+## Type: Font
+c.fonts.messages.info = 'default_size default_family'
+
+## Font used for warning messages.
+## Type: Font
+c.fonts.messages.warning = 'default_size default_family'
+
+## Font used for prompts.
+## Type: Font
+c.fonts.prompts = 'default_size sans-serif'
+
+## Font used in the statusbar.
+## Type: Font
+c.fonts.statusbar = '9pt default_family'
+
+## Font used for selected tabs.
+## Type: Font
+c.fonts.tabs.selected = 'default_size default_family'
+
+## Font used for unselected tabs.
+## Type: Font
+c.fonts.tabs.unselected = 'default_size default_family'
+
+## Font family for cursive fonts.
+## Type: FontFamily
+c.fonts.web.family.cursive = ''
+
+## Font family for fantasy fonts.
+## Type: FontFamily
+c.fonts.web.family.fantasy = ''
+
+## Font family for fixed fonts.
+## Type: FontFamily
+c.fonts.web.family.fixed = ''
+
+## Font family for sans-serif fonts.
+## Type: FontFamily
+c.fonts.web.family.sans_serif = ''
+
+## Font family for serif fonts.
+## Type: FontFamily
+c.fonts.web.family.serif = ''
+
+## Font family for standard fonts.
+## Type: FontFamily
+c.fonts.web.family.standard = ''
+
+## Default font size (in pixels) for regular text.
+## Type: Int
+c.fonts.web.size.default = 16
+
+## Default font size (in pixels) for fixed-pitch text.
+## Type: Int
+c.fonts.web.size.default_fixed = 13
+
+## Hard minimum font size (in pixels).
+## Type: Int
+c.fonts.web.size.minimum = 0
+
+## Minimum logical font size (in pixels) that is applied when zooming
+## out.
+## Type: Int
+c.fonts.web.size.minimum_logical = 6
+
 ## Characters used for hint strings.
 ## Type: UniqueCharString
 c.hints.chars = 'aoeusnth'
@@ -367,11 +455,11 @@ c.hints.min_chars = 1
 
 ## Padding (in pixels) for hints.
 ## Type: Padding
-c.hints.padding = {'top': 0, 'bottom': 0, 'left': 3, 'right': 3}
+c.hints.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}
 
 ## Rounding radius (in pixels) for the edges of hints.
 ## Type: Int
-c.hints.radius = 3
+c.hints.radius = 2
 
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
