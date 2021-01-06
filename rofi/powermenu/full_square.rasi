@@ -50,7 +50,7 @@ inputbar {
     border:                         0px 0px 5px 5px;
     border-radius:                  0px;
     border-color:                   @border;
-    margin:                         0% 23.5% 0% 0%;
+    margin:                         0px 300px 0px 0px;
     padding:                        0.5%;
     position:                       center;
 }
@@ -85,7 +85,7 @@ element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         5% 5% 16% 5%;
+    margin:                         25px 60px 110px 60px;
 }
 
 element normal.urgent,
