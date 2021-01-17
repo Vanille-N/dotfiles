@@ -53,7 +53,8 @@ bindsym XF86MonBrightnessDown exec light -U 20
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec xfce4-terminal
 
 # Take a screenshot
 bindsym Print exec flameshot gui
@@ -120,6 +121,7 @@ set $ws6 "6:<span font='InupiaqNumbers 11'></span>"
 set $ws7 "7:<span font='InupiaqNumbers 11'></span>"
 set $ws8 "8:<span font='InupiaqNumbers 11'></span>"
 set $ws9 "9:<span font='InupiaqNumbers 11'></span>"
+set $wsX "100:×"
 
 # Workspace jump keys
 set $k0 KP_0
@@ -132,6 +134,7 @@ set $k6 KP_6
 set $k7 KP_7
 set $k8 KP_8
 set $k9 KP_9
+set $kX KP_Decimal
 set $k0alt KP_Insert
 set $k1alt KP_End
 set $k2alt KP_Down
@@ -142,6 +145,7 @@ set $k6alt KP_Right
 set $k7alt KP_Home
 set $k8alt KP_Up
 set $k9alt KP_Prior
+set $kXalt KP_Del
 
 # Bind workspaces to screens
 workspace $ws0 output $monitor_ext
@@ -166,6 +170,7 @@ bindsym $mod+Mod2+$k6 workspace $ws6
 bindsym $mod+Mod2+$k7 workspace $ws7
 bindsym $mod+Mod2+$k8 workspace $ws8
 bindsym $mod+Mod2+$k9 workspace $ws9
+bindsym $mod+Mod2+$kX workspace $wsX
 
 # Move focused container to workspace
 bindsym $mod+Shift+Mod2+$k1alt move container to workspace $ws1
