@@ -41,3 +41,28 @@ clippy() { base=${1%.*}; ~/.cargo/bin/clippy-driver $base.rs; rm $base; }
 pltest() {
     swipl -f $1.pl -s $1_tests.plt -g run_tests,halt -t 'halt(1)'
 }
+
+dptinfo-connect() {
+    num="$1"
+    [[ "$num" = "" ]] && num="23"
+    ssh dptinfo$num -J dptinfo
+}
+
+dptinfo-send() {
+    doc="$1"
+    dest="$2"
+    [[ "$doc" = "" ]] && (echo "No file specified"; exit 1)
+    [[ "$dest" = "" ]] && dest="Documents/"
+    rsync -rhP -e "ssh -i ~/.ssh/dptinfo" "$doc" "villani@ssh.dptinfo.ens-cachan.fr:$dest"
+}
+
+dptinfo-retrieve() {
+    doc="$1"
+    dest="$2"
+    [[ "$doc" = "" ]] && (echo "No file specified"; exit 1)
+    [[ "$dest" = "" ]] && dest="."
+    rsync -rhP -e "ssh -i ~/.ssh/dptinfo" "villani@ssh.dptinfo.ens-cachan.fr:$doc" "$dest"
+}
+irc-crans() {
+    ssh -t vanille@abys.se tmux a -t irc
+}
