@@ -68,3 +68,16 @@ This whole repo is essentially the non-sensitive part of my `.config/`
 - [zathura (pdf viewer)](https://pwmt.org/projects/zathura/)
 - [picom (compositor)](https://github.com/yshui/picom)
 - [starship (prompt)](https://starship.rs/guide/)
+
+### Themes
+- [neofetch sample config](https://gist.github.com/backslash-f/4d0b221ab0304043c5410b33a08849fa)
+- [kitty theme collection](https://github.com/dexpota/kitty-themes)
+- [qutebrowser base-16](https://github.com/theova/base16-qutebrowser)
+- [browser startpage Prismatic Night](https://github.com/dbuxy218/Prismatic-Night)
+- [rofi app collection](https://github.com/adi1090x/rofi)
+
+### Fonts
+- [JetBrains Mono (main font)](https://www.jetbrains.com/lp/mono/)
+- [Fira Code (terminal)](https://github.com/tonsky/FiraCode)
+- [Nerd Fonts (icon patch)](https://www.nerdfonts.com/)
+- [InupiaqNumbers (workspace numbers)](https://github.com/0xcf843ecf802c722f434d56/InupiaqNumbers)
