@@ -254,8 +254,8 @@ bindsym $mod+Shift+t exec --no-startup-id ~/.config/scripts/network.sh
 
 # Resource apps : btm + htop
 bindsym $mod+Shift+h exec --no-startup-id ~/.config/scripts/resources.sh
-for_window [class="^Bottom$"] floating enable; [class="^Bottom$"] move position 20 15
-for_window [class="^Top$"] floating enable; [class="^Top$"] move position 600 80
+#for_window [class="^Bottom$"] floating enable; [class="^Bottom$"] move position 20 15
+#for_window [class="^Top$"] floating enable; [class="^Top$"] move position 600 80
 
 # Passwords
 bindsym $mod+Shift+w exec --no-startup-id passmenu
