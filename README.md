@@ -81,3 +81,25 @@ This whole repo is essentially the non-sensitive part of my `.config/`
 - [Fira Code (terminal)](https://github.com/tonsky/FiraCode)
 - [Nerd Fonts (icon patch)](https://www.nerdfonts.com/)
 - [InupiaqNumbers (workspace numbers)](https://github.com/0xcf843ecf802c722f434d56/InupiaqNumbers)
+
+### Other
+- `env` contains some of my dotfiles :
+
+| file `~/...`    | symlinks to `~/.config/env/...` |
+| --------------- | ----------------------------- |
+| `.bashrc`       | `bashrc`                      |
+| `.bash_aliases` | `alias`                       |
+| `.vimrc`        | `vimrc`                       |
+| `.XCompose`     | `xcompose`                    |
+| `.xinitrc`      | `xinitrc`                     |
+
+`funcs` contains some shortcuts too complex to be aliases, `keyboard` is my typing setup, `vars` are some environment variables.
+
+- `scripts` is mostly applications launchers
+    - `alt-paste` types characters
+    - `apps-menu` is my main app launcher
+    - `network.sh` shows two windows for network management (`nmcli`, `nm-connection-editor`)
+    - `nm.sh` loops printing network information
+    - `resources.sh`shows two windows for resource tracking (`htop`, `btm`)
+    - `unicode-menu` allows pasting arbitrary unicode characters
+    - `volume.sh` shows two windows for sound control (`alsamixer`, `vis`)
