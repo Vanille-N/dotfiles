@@ -8,6 +8,19 @@ ctex() { # LaTeX
     base=${1%.*}
     pdflatex --interaction=nonstopmode --halt-on-error $base.tex
 }
+
+texwatch() { # LaTeX loop
+    base=${1%.*}
+    while true; do
+        for src in *.tex; do
+            if [[ $src -nt $base.pdf ]]; then
+                pdflatex --interaction=nonstopmode --halt-on-error $base.tex || sleep 5
+            fi
+        done
+        sleep 1
+    done
+}
+
 crs() { # Rust
     base=${1%.*}
     rustc -o $base.exe $base.rs
