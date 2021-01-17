@@ -11,8 +11,11 @@ xmodmap -e "clear Lock"
 # set compose key
 xmodmap -e "keysym Alt_R = Multi_key"
 
-# key [< >] became [Esc Esc] because I already have '<' on [, <] and '>' on [. >]
-xmodmap -e "keycode 94 = Escape Escape"
+# I already have '<' on [, <] and '>' on [. >]
+# -> [< >] becomes [\ |]
+# -> [\ |] becomes [Esc Esc]
+xmodmap -e "keycode 51 = Escape Escape"
+xmodmap -e "keycode 94 = backslash bar"
 
 # remap Backspace to Delete
 xmodmap -e "keycode 22 = Delete"
