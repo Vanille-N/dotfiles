@@ -3,9 +3,6 @@
 # path
 export PATH="~/bin:~/.cargo/bin:~/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:~/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.gem/ruby/2.7.0/bin"
 
-# session at ENS
-export DPTSSH='villani@ssh.dptinfo.ens-cachan.fr'
-
 # ctrl+o in fzf opens selected file in vim
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 

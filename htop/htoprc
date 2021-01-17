@@ -3,7 +3,7 @@
 fields=0 48 18 17 2 46 47 18 1
 sort_key=46
 sort_direction=1
-tree_sort_key=46
+tree_sort_key=47
 tree_sort_direction=1
 hide_kernel_threads=1
 hide_userland_threads=1
@@ -36,3 +36,4 @@ left_meters=Tasks LoadAverage Uptime
 left_meter_modes=2 2 2
 right_meters=Battery Clock
 right_meter_modes=4 2
+hide_function_bar=0

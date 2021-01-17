@@ -75,19 +75,9 @@ $(printf "\\u200E")ﭮ Discord
  Dictionary
  Mathcha
 韛 DeTeXify
- Classes
- BlackBoard
- English
- Windish
- MPRI
- Banque Postale
- Société Gen
-龎 Manga
- Izly
  Explain Shell
  Exercism
- Godbolt
- Goubault"
+ Godbolt"
 )"
 
 # The Discord icon (U+F06E) is an arabic character, so it triggers right-to-left text display
@@ -119,19 +109,9 @@ case "$MENU" in
   *Dictionary) qutebrowser https://www.dictionary.com/ & ;;
   *Mathcha) qutebrowser https://www.mathcha.io/editor & ;;
   *DeTeXify) qutebrowser https://detexify.kirelabs.org/classify.html & ;;
-  *Classes) qutebrowser www.dptinfo.ens-cachan.fr/L3/edts1.php & ;;
-  *BlackBoard) firefox https://eu.bbcollab.com/collab/ui/session/guest/2017ae38ceb241d0940dfbf04189903a & ;;
-  *English) firefox https://app.slack.com/client/T01B57EQJMQ/C01B57EQVDY & ;;
-  *Windish) firefox https://eu.bbcollab.com/guest/52223f083b69475e8e4b129231c6295c & ;;
-  *MPRI) qutebrowser https://admin.dptinfo.ens-cachan.fr/serveur_pedagogique/accueil.php & ;;
-  *Postale) firefox https://www.labanquepostale.fr/ & ;;
-  *Gen) firefox https://particuliers.societegenerale.fr/ & ;;
-  *Manga) qutebrowser https://mangapark.net/ & ;;
-  *Izly) qutebrowser https://mon-espace.izly.fr & ;;
   *Shell) qutebrowser https://explainshell.com & ;;
   *Exercism) qutebrowser https://exercism.io/my/tracks & ;;
   *Godbolt) qutebrowser https://godbolt.org & ;;
-  *Goubault) firefox https://eu.bbcollab.com/guest/8fa2a723e68b4cbca6e8d1c2359ba2fe & ;;
 esac
 
 # More Options
