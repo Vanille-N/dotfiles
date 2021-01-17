@@ -1,6 +1,9 @@
 #!/bin/bash
+
+figlet "Scanning network..."
+
 while sleep 1; do
-    data="$( nmcli --color yes dev wifi )"
+    data="$( nmcli --pretty --color yes dev wifi )"
     clear
     echo -e "$data"
 done
