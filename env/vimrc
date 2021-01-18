@@ -117,3 +117,5 @@ if has('syntax') && has('eval')
 endif
 
 set belloff=all
+set nofoldenable    " disable folding
+
