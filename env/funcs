@@ -64,5 +64,9 @@ dptinfo-retrieve() {
     rsync -rhP -e "ssh -i ~/.ssh/dptinfo" "villani@ssh.dptinfo.ens-cachan.fr:$doc" "$dest"
 }
 irc-crans() {
-    ssh -t vanille@abys.se tmux a -t irc
+    ssh -i ~/.ssh/abysse -t vanille@abys.se tmux a -t irc
+}
+abysse() {
+    ssh -i ~/.ssh/abysse -t vanille@abys.se
+}
 }
