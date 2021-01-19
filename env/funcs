@@ -69,4 +69,8 @@ irc-crans() {
 abysse() {
     ssh -i ~/.ssh/abysse -t vanille@abys.se
 }
+pdfcat() {
+    f="$1"
+    shift
+    pdftk "$@" cat output "$f.pdf"
 }
