@@ -12,10 +12,9 @@ xmodmap -e "clear Lock"
 xmodmap -e "keysym Alt_R = Multi_key"
 
 # I already have '<' on [, <] and '>' on [. >]
-# -> [< >] becomes [\ |]
-# -> [\ |] becomes [Esc Esc]
-xmodmap -e "keycode 51 = Escape Escape"
-xmodmap -e "keycode 94 = backslash bar"
+# -> [< >] becomes [Esc Esc]
+#xmodmap -e "keycode 51 = Escape Escape"
+xmodmap -e "keycode 94 = Escape Escape"
 
 # remap Backspace to Delete
 xmodmap -e "keycode 22 = Delete"
