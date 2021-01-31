@@ -18,9 +18,6 @@ export GPG_TTY="$(tty)"
 # color tweak for exa
 export EXA_COLORS="*.mp3=35"
 
-# intel quartus cfg
-export QSYS_ROOTDIR="/home/vanille/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
-
 # exercism cfg
 export BATS_RUN_SKIPPED=true
 
