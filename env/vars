@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 
+HOME="/home/vanille"
+
 # path
-export PATH="~/bin:~/.cargo/bin:~/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:~/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.gem/ruby/2.7.0/bin"
+export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:$HOME/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.gem/ruby/2.7.0/bin"
 
 # ctrl+o in fzf opens selected file in vim
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
@@ -21,3 +23,15 @@ export QSYS_ROOTDIR="/home/vanille/intelFPGA_lite/20.1/quartus/sopc_builder/bin"
 
 # exercism cfg
 export BATS_RUN_SKIPPED=true
+
+export WORKSPACE_0="0:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_1="1:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_2="2:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_3="3:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_4="4:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_5="5:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_6="6:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_7="7:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_8="8:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_9="9:<span font='InupiaqNumbers 11'></span>"
+export WORKSPACE_X="100:×"
