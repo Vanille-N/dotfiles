@@ -285,7 +285,7 @@ bar {
 exec --no-startup-id dunst
 
 # Compositor
-exec_always --no-startup-id pkill picom; picom --no-use-damage --config ~/.config/picom.conf
+#exec_always --no-startup-id pkill picom; picom --no-use-damage --config ~/.config/picom.conf
 
 # Some more setup
 exec_always --no-startup-id ~/.xinitrc
