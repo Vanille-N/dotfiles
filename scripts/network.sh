@@ -1,10 +1,12 @@
 #!/bin/bash
 
+. ~/.config/env/vars
+
 wsprev="$( ~/.config/scripts/i3-curr-ws )"
 
 pkill nm-connection-e && exit 1
 
-i3 workspace "100:×"
+i3 workspace "$WORKSPACE_X"
 kitty --class Scanner \
     --config ~/.config/kitty/kitty.conf \
     --override font_size=8.0 \
@@ -25,6 +27,5 @@ kill $cpid1
 kill $cpid2
 
 newws="$( ~/.config/scripts/i3-curr-ws )"
-if [[ "$newws" = "100:×" ]]; then
-    i3 workspace "$wsprev"
-fi
+i3 workspace "$wsprev"
+i3 workspace "$newws"
