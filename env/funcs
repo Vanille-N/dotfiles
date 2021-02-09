@@ -9,18 +9,6 @@ ctex() { # LaTeX
     pdflatex --interaction=nonstopmode --halt-on-error $base.tex
 }
 
-texwatch() { # LaTeX loop
-    base=${1%.*}
-    while true; do
-        for src in *.tex; do
-            if [[ $src -nt $base.pdf ]]; then
-                pdflatex --interaction=nonstopmode --halt-on-error $base.tex || sleep 5
-            fi
-        done
-        sleep 1
-    done
-}
-
 crs() { # Rust
     base=${1%.*}
     rustc -o $base.exe $base.rs
@@ -41,36 +29,16 @@ clippy() { base=${1%.*}; ~/.cargo/bin/clippy-driver $base.rs; rm $base; }
 pltest() {
     swipl -f $1.pl -s $1_tests.plt -g run_tests,halt -t 'halt(1)'
 }
-
-dptinfo-connect() {
-    num="$1"
-    [[ "$num" = "" ]] && num="23"
-    ssh dptinfo$num -J dptinfo
-}
-
-dptinfo-send() {
-    doc="$1"
-    dest="$2"
-    [[ "$doc" = "" ]] && (echo "No file specified"; exit 1)
-    [[ "$dest" = "" ]] && dest="Documents/"
-    rsync -rhP -e "ssh -i ~/.ssh/dptinfo" "$doc" "villani@ssh.dptinfo.ens-cachan.fr:$dest"
-}
-
-dptinfo-retrieve() {
-    doc="$1"
-    dest="$2"
-    [[ "$doc" = "" ]] && (echo "No file specified"; exit 1)
-    [[ "$dest" = "" ]] && dest="."
-    rsync -rhP -e "ssh -i ~/.ssh/dptinfo" "villani@ssh.dptinfo.ens-cachan.fr:$doc" "$dest"
-}
 irc-crans() {
-    ssh -i ~/.ssh/abysse -t vanille@abys.se tmux a -t irc
+    #ssh -i ~/.ssh/abysse -t vanille@abys.se tmux a -t irc
+    ssh -i ~/.ssh/id_rsa -t vanille@zamok.crans.org tmux a -t irc
 }
 abysse() {
-    ssh -i ~/.ssh/abysse -t vanille@abys.se
+    ssh -i ~/.ssh/id_rsa vanille@abys.se
 }
-pdfcat() {
-    f="$1"
-    shift
-    pdftk "$@" cat output "$f.pdf"
+zamok() {
+    ssh -i ~/.ssh/id_rsa vanille@zamok.crans.org
+}
+charybde() {
+    ssh -i ~/.ssh/id_rsa _vanille@charybde.crans.org
 }

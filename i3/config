@@ -24,9 +24,9 @@ client.background       #ffffff
 
 
 # i3-gaps specific
-gaps outer 0
-gaps inner 0
-smart_gaps on
+#gaps outer 0
+#gaps inner 0
+#smart_gaps on
 
 # Mouse stays where it is
 mouse_warping none
@@ -209,6 +209,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [class="Atom"] move window to workspace $ws0
 for_window [class="discord"] move window to workspace $ws9
 for_window [class="Thunderbird"] move window to workspace $ws6
+for_window [class="Evolution"] move window to workspace $ws6
 #assign [title=".*Vanille.*"] $ws3
 #for_window [class="Code"] move window to workspace $ws3
 #for_window [class="Fun"] move window to workspace $ws8
