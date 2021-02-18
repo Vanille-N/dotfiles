@@ -22,4 +22,6 @@ kill $cpid
 
 newws="$( ~/.config/scripts/i3-curr-ws )"
 i3 workspace "$wsprev"
-i3 workspace "$newws"
+if [ ! "$newws" == "$WORKSPACE_X" ]; then
+    i3 workspace "$newws"
+fi
