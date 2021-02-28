@@ -7,6 +7,8 @@ wsprev="$( ~/.config/scripts/i3-curr-ws )"
 pkill nm-connection-e && exit 1
 
 i3 workspace "$WORKSPACE_X"
+i3 layout split
+i3 split h
 kitty --class Scanner \
     --config ~/.config/kitty/kitty.conf \
     --override font_size=8.0 \

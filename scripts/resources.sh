@@ -7,6 +7,8 @@ wsprev="$( ~/.config/scripts/i3-curr-ws )"
 pkill htop && exit 1
 
 i3 workspace "$WORKSPACE_X"
+i3 layout split
+i3 split h
 kitty --class Bottom \
     --config ~/.config/kitty/kitty.conf \
     --override font_size=7.0 \
