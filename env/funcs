@@ -30,15 +30,8 @@ pltest() {
     swipl -f $1.pl -s $1_tests.plt -g run_tests,halt -t 'halt(1)'
 }
 irc-crans() {
-    #ssh -i ~/.ssh/abysse -t vanille@abys.se tmux a -t irc
+    if [ "$TERM" = "xterm-kitty" ]; then
+        alias ssh='kitty +kitten ssh'
+    fi
     ssh -i ~/.ssh/id_rsa -t vanille@zamok.crans.org tmux a -t irc
-}
-abysse() {
-    ssh -i ~/.ssh/id_rsa vanille@abys.se
-}
-zamok() {
-    ssh -i ~/.ssh/id_rsa vanille@zamok.crans.org
-}
-charybde() {
-    ssh -i ~/.ssh/id_rsa _vanille@charybde.crans.org
 }
