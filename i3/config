@@ -13,6 +13,8 @@ font pango: JetBrains Mono, NotoFontsEmoji 9
 # Border size
 for_window [class=".*"] border pixel 1
 
+workspace_layout tabbed
+
 # Border theme
 # type                  border  bg      text    indic
 client.focused          #da9d0f #283b00 #ffffff #b8bb26   #b8bb26
