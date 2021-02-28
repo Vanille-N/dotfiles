@@ -14,6 +14,7 @@ export VISUAL=vim
 
 # GPG (signature)
 export GPG_TTY="$(tty)"
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # color tweak for exa
 export EXA_COLORS="*.mp3=35"

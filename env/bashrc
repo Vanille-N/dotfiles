@@ -25,6 +25,10 @@ for file in "alias" "vars" "funcs"; do
     fi
 done
 
+if [ "$TERM" = "xterm-kitty" ]; then
+    alias ssh='kitty +kitten ssh'
+fi
+
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
