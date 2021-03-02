@@ -3,12 +3,21 @@
 # don't delete for real
 rem() { mv "$@" ~/Trash/ ; }
 
+# clever completion function for cd
+# looks to CDPATH iff no match in current directory
+_clever_cd () { CDPATH= _cd "$@"; if [ -z "$COMPREPLY" ]; then _cd "$@"; fi; }
+complete -F _clever_cd -o nospace cd
+alias 'cd'='cd >/dev/null'
+
+# move and show
+cl() { cd "$@" && ls; }
+complete -F _clever_cd -o nospace cl
+
 # various compilers
 ctex() { # LaTeX
     base=${1%.*}
     pdflatex --interaction=nonstopmode --halt-on-error $base.tex
 }
-
 crs() { # Rust
     base=${1%.*}
     rustc -o $base.exe $base.rs
