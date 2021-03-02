@@ -8,6 +8,7 @@ alias 'lla'='exa -la'
 alias 'fda'='fd -IH'
 alias 'rga'='rg -uuu'
 alias 'preview'='fzf --preview "bat --color \"always\" {}"'
+alias '..'='cd ..'
 
 # updates
 alias 'pacs'='sudo pacman -S'
@@ -35,3 +36,8 @@ alias 'hsync'='rsync -rhP'
 alias 'mountusb'='mount -o gid=users,fmask=113,dmask=002'
 alias 'mountphone'='aft-mtp-mount'
 alias 'ripcd'='cdda2wav -vall cddb=0 speed=4 -paranoia paraopts=proof -B -D /dev/sr0'
+
+# navigation
+alias 'cd_up'='cd .. && pwd && ls'
+alias 'cd_prev'='cd - && pwd && ls'
+export HISTIGNORE="cd_*:$HISTIGNORE"
