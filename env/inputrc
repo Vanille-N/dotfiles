@@ -1,0 +1,7 @@
+$include /etc/inputrc
+
+# Color completion
+set colored-stats On
+set visible-stats Off
+set mark-modified-lines Off
+set mark-symlinked-directories Off
