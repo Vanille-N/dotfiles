@@ -15,6 +15,18 @@ shopt -s histappend
 shopt -s checkwinsize # update `tput lines` & `tput cols` after each command
 shopt -s globstar # wildcard behavior
 
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+if [ -f "$HOME/bin/autocomp_remote.sh" ]; then
+    . "$HOME/bin/autocomp_remote.sh"
+fi
+
+
 # load external files
 CFGDIR="/home/vanille/.config/env"
 for file in "alias" "vars" "funcs"; do
@@ -28,18 +40,6 @@ done
 if [ "$TERM" = "xterm-kitty" ]; then
     alias ssh='kitty +kitten ssh'
 fi
-
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-if [ -f "$HOME/bin/autocomp_remote.sh" ]; then
-    . "$HOME/bin/autocomp_remote.sh"
-fi
-
 
 gpgconf --launch gpg-agent
 
