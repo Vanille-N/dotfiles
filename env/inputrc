@@ -5,3 +5,6 @@ set colored-stats On
 set visible-stats Off
 set mark-modified-lines Off
 set mark-symlinked-directories Off
+
+"\e[1;3A": '\C-a\C-kcd_up\n'
+"\e[1;3D": '\C-a\C-kcd_prev\n'
