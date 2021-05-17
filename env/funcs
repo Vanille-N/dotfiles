@@ -34,6 +34,8 @@ cas() { # ix86 asm
 # clippy wrapper
 clippy() { base=${1%.*}; ~/.cargo/bin/clippy-driver $base.rs; rm $base; }
 
+mute() { "$@" &>/dev/null; }
+
 # exercism prolog
 pltest() {
     swipl -f $1.pl -s $1_tests.plt -g run_tests,halt -t 'halt(1)'
@@ -44,3 +46,33 @@ irc-crans() {
     fi
     ssh -i ~/.ssh/id_rsa -t vanille@zamok.crans.org tmux a -t irc
 }
+
+save-home() {
+    SRC="$1"
+    DEST="$2"
+    rsync -rhPavz --filter=':- .gitignore' "$SRC" "$DEST"
+}
+
+aurf() {
+    pac="$1"
+    $pac -Sl \
+    | awk '{print $2($4=="" ? "" : " *")}' \
+    | fzf --multi --preview "$pac -Si {1}" --reverse \
+    | cut -d " " -f 1 \
+    | xargs -ro $pac -S
+}
+alias pacf='aurf pacman'
+alias yayf='aurf yay'
+
+aurfs() {
+    pac="$1"
+    sudo $pac -Sy
+    $pac -Qu \
+    | fzf --multi --preview "$pac -Si {1}" --reverse
+    res=$?
+    if [ 130 -ne $res ]; then
+        echo y | sudo $pac -Su
+    fi
+}
+alias 'pacf++'='aurfs pacman'
+alias 'yayf++'='aurfs yay'

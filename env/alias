@@ -31,13 +31,18 @@ alias 'gitnuke'='fts_gitignore_nuke'
 alias 'touchall'='find . -exec touch {} +'
 alias 'cx'='chmod +x'
 alias 'hsync'='rsync -rhP'
+alias 'hyperlinks'='/bin/ls --hyperlink=auto'
 
 # mount
-alias 'mountusb'='mount -o gid=users,fmask=113,dmask=002'
+alias 'mountusb'='sudo mount -o gid=users,fmask=113,dmask=002'
 alias 'mountphone'='aft-mtp-mount'
 alias 'ripcd'='cdda2wav -vall cddb=0 speed=4 -paranoia paraopts=proof -B -D /dev/sr0'
+alias 'disk-usage'='df'
 
 # navigation
 alias 'cd_up'='cd .. && pwd && ls'
 alias 'cd_prev'='cd - && pwd && ls'
 export HISTIGNORE="cd_*:$HISTIGNORE"
+
+# edition
+alias 'fugitive'='vim +Gstatus +only'
