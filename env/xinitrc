@@ -9,7 +9,7 @@ amixer set "Beep" 0% mute
 xrandr --output VGA1 --right-of LVDS1 --auto
 
 # Set wallpaper
-feh --bg-fill ~/.config/wallpapers/valley.jpg
+#feh --bg-fill ~/.config/wallpapers/valley.jpg
 
 numlockx
 xss-lock --transfer-sleep-lock -- betterlockscreen -l & disown

@@ -3,7 +3,7 @@
 HOME="/home/vanille"
 
 # path
-export PATH="~/bin:~/.cargo/bin:~/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:~/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.gem/ruby/2.7.0/bin"
+export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:$HOME/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.gem/ruby/2.7.0/bin:$HOME/.gem/ruby/3.0.0/bin:$HOME/bin/zig:$HOME/.nimble/bin:$HOME/.local/bin/nim/bin"
 
 # ctrl+o in fzf opens selected file in vim
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
@@ -20,7 +20,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export EXA_COLORS="*.mp3=35"
 
 # directories in direct access
-export CDPATH=".:~:~/School/L3/2S-Cours:~/School/L3:~/.config"
+export CDPATH=".:$HOME:$HOME/School/L3/2S-Cours:$HOME/School/L3:$HOME/.config"
 
 # exercism cfg
 export BATS_RUN_SKIPPED=true
