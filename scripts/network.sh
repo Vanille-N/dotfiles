@@ -5,6 +5,8 @@
 wsprev="$( ~/.config/scripts/i3-curr-ws )"
 
 pkill nm-connection-e && exit 1
+pkill htop && exit 1
+pkill alsamixer && exit 1
 
 i3 workspace "$WORKSPACE_X"
 i3 layout split
