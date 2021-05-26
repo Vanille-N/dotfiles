@@ -32,6 +32,7 @@ alias 'touchall'='find . -exec touch {} +'
 alias 'cx'='chmod +x'
 alias 'hsync'='rsync -rhP'
 alias 'hyperlinks'='/bin/ls --hyperlink=auto'
+alias 'chars'='grep -o .'
 
 # mount
 alias 'mountusb'='sudo mount -o gid=users,fmask=113,dmask=002'

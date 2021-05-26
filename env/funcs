@@ -30,6 +30,10 @@ cas() { # ix86 asm
     base=${1%.*}
     gcc -ggdb -o $base $base.s -lm -lc
 }
+cml() { # OCaml
+    base=${1%.*}
+    ocamlopt -o $base.exe $base.ml
+}
 
 # clippy wrapper
 clippy() { base=${1%.*}; ~/.cargo/bin/clippy-driver $base.rs; rm $base; }
@@ -59,7 +63,7 @@ aurf() {
     | awk '{print $2($4=="" ? "" : " *")}' \
     | fzf --multi --preview "$pac -Si {1}" --reverse \
     | cut -d " " -f 1 \
-    | xargs -ro $pac -S
+    | xargs -ro sudo $pac -S
 }
 alias pacf='aurf pacman'
 alias yayf='aurf yay'
@@ -76,3 +80,6 @@ aurfs() {
 }
 alias 'pacf++'='aurfs pacman'
 alias 'yayf++'='aurfs yay'
+
+strjoin() { sed ":a; N; \$!ba; s/\n/$1/g"; }
+
