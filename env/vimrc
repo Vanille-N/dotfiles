@@ -129,8 +129,11 @@ set autoindent " repeat previous indentation
 " au BufEnter *.tex :set indentkeys=
 au BufEnter *.ml,*.mli :setlocal indentkeys= "0{,0},0),0],:,0#,!^F,o,O,e,0=and,0=class,0=constraint,0=done,0=else,0=end,0=exception,0=external,0=if,0=include,0=inherit,0=initializer,0=let,0=method,0=open,0=then,0=type,0=val,0=with,0;;,0>\],0\|\],0>},0\|,0},0\],0)
 
-au BufRead,BufNewFile *.bil set filetype=bil
-au BufRead,BufNewFile *.pest set filetype=pest
+au BufRead,BufNewFile *.bil setlocal filetype=bil
+au BufRead,BufNewFile *.pest setlocal filetype=pest
+
+au BufRead,BufNewFile *.fl,*.flex,*.l,*.lm setlocal filetype=lex
+au BufRead,BufNewFile *.y,*.ypp,*.ym setlocal filetype=yacc
 
 
 " Tabs
