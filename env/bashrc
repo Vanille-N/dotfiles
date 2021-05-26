@@ -44,5 +44,6 @@ fi
 gpgconf --launch gpg-agent
 
 eval `opam config env`
+eval $(perl -I$(exercism workspace)/perl5/lib/perl5 -Mlocal::lib=$(exercism workspace)/perl5)
 
 eval "$(starship init bash)"
