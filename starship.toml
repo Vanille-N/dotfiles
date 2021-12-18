@@ -1,20 +1,20 @@
 format = """
+$status\
+$jobs\
+$cmd_duration\
+\t\t\
 $username\
 $hostname\
 $directory\
+\t\t\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status\
 $memory_usage\
-$gcloud\
 $env_var\
-$cmd_duration\
 $line_break\
-$jobs\
 $battery\
-$time\
-$status\
 $character"""
 
 # prompt character
@@ -48,6 +48,16 @@ truncation_symbol = "…/"
 
 [status]
 disabled = false
+symbol = " ✖ "
+success_symbol = " ✔️ "
+not_executable_symbol = " 🚫 "
+not_found_symbol = " 🔍"
+sigint_symbol = " ⚡"
+signal_symbol = " ⚡"
+map_symbol = true
+pipestatus = true
+
+
 
 [custom.prolog]
 command = "swipl --version | cut -d' ' -f3"

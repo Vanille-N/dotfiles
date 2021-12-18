@@ -17,18 +17,12 @@ workspace_layout tabbed
 
 # Border theme
 # type                  border  bg      text    indic
-client.focused          #da9d0f #283b00 #ffffff #b8bb26   #b8bb26
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #800000 #ffffff #800000   #800000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #b8bb26 #283b00 #b8bb26 #000000   #b8bb26
+client.focused_inactive #88871a #0c2a00 #686b16 #000000   #424242
+client.unfocused        #222103 #202520 #606060 #000000   #282828
+client.urgent           #cc241d #b16286 #020000 #000000   #300505
+client.placeholder      #222103 #101000 #506020 #000000   #282828
 client.background       #ffffff
-
-
-# i3-gaps specific
-#gaps outer 0
-#gaps inner 0
-#smart_gaps on
 
 # Mouse stays where it is
 mouse_warping none
@@ -42,21 +36,23 @@ focus_follows_mouse no
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +2%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -2%"
-bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+# Adjust volume
+bindsym XF86AudioRaiseVolume exec /usr/bin/amixer -c 0 set Master 0.2db+
+bindsym XF86AudioLowerVolume exec /usr/bin/amixer -c 0 set Master 0.2db-
+bindsym XF86AudioMute exec /usr/bin/amixer -D pulse set Master 1+ toggle
 
 # Brightness control in default mode (see resize mode for more brightness control)
-bindsym XF86MonBrightnessUp exec light -A 20
-bindsym XF86MonBrightnessDown exec light -U 20
+bindsym XF86MonBrightnessUp exec ~/bin/bright Up
+bindsym XF86MonBrightnessDown exec ~/bin/bright Down
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# Use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
+#bindsym $mod+Shift+Return exec xfce4-terminal
+bindsym $mod+KP_Enter exec kitty
+bindsym $mod+Shift+N exec alacritty --working-directory `xcwd`
 
 # Take a screenshot
 bindsym Print exec flameshot gui
@@ -67,10 +63,13 @@ bindsym $mod+BackSpace kill
 bindsym $mod+Delete kill
 
 # Program launcher
-bindsym $mod+l exec ~/.config/scripts/apps-menu
+bindsym $mod+l exec --no-startup-id ~/.config/scripts/launcher/main.sh
 
 # Open system menu
-bindsym $mod+m exec ~/.config/rofi/powermenu/sys-menu.sh
+bindsym $mod+m exec --no-startup-id ~/.config/scripts/sysmenu/main.sh
+
+# Control panels
+bindsym $mod+c exec --no-startup-id ~/.config/scripts/controls/main.sh
 
 # Move focus
 bindsym $mod+Left focus left
@@ -105,24 +104,21 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+g focus parent
 
-# focus the child container
-bindsym $mod+z exec ~/.config/scripts/unicode-menu
-
 # Multi-monitor management
 set $monitor_main LVDS1
 set $monitor_ext VGA1
 
 # Workspace names
-set $ws0 "0:<span font='InupiaqNumbers 11'></span>"
-set $ws1 "1:<span font='InupiaqNumbers 11'></span>"
-set $ws2 "2:<span font='InupiaqNumbers 11'></span>"
-set $ws3 "3:<span font='InupiaqNumbers 11'></span>"
-set $ws4 "4:<span font='InupiaqNumbers 11'></span>"
-set $ws5 "5:<span font='InupiaqNumbers 11'></span>"
-set $ws6 "6:<span font='InupiaqNumbers 11'></span>"
-set $ws7 "7:<span font='InupiaqNumbers 11'></span>"
-set $ws8 "8:<span font='InupiaqNumbers 11'></span>"
-set $ws9 "9:<span font='InupiaqNumbers 11'></span>"
+set $ws0 "0:<span font='InupiaqNumbers 12'></span>"
+set $ws1 "1:<span font='InupiaqNumbers 12'></span>"
+set $ws2 "2:<span font='InupiaqNumbers 12'></span>"
+set $ws3 "3:<span font='InupiaqNumbers 12'></span>"
+set $ws4 "4:<span font='InupiaqNumbers 12'></span>"
+set $ws5 "5:<span font='InupiaqNumbers 12'></span>"
+set $ws6 "6:<span font='InupiaqNumbers 12'></span>"
+set $ws7 "7:<span font='InupiaqNumbers 12'></span>"
+set $ws8 "8:<span font='InupiaqNumbers 12'></span>"
+set $ws9 "9:<span font='InupiaqNumbers 12'></span>"
 set $wsX "100:×"
 
 # Workspace jump keys
@@ -163,28 +159,49 @@ workspace $ws9 output $monitor_main
 
 # Switch to workspace
 bindsym $mod+Mod2+$k0 workspace $ws0
+bindsym $mod+$k0alt workspace $ws0
 bindsym $mod+Mod2+$k1 workspace $ws1
+bindsym $mod+$k1alt workspace $ws1
 bindsym $mod+Mod2+$k2 workspace $ws2
+bindsym $mod+$k2alt workspace $ws2
 bindsym $mod+Mod2+$k3 workspace $ws3
+bindsym $mod+$k3alt workspace $ws3
 bindsym $mod+Mod2+$k4 workspace $ws4
+bindsym $mod+$k4alt workspace $ws4
 bindsym $mod+Mod2+$k5 workspace $ws5
+bindsym $mod+$k5alt workspace $ws5
 bindsym $mod+Mod2+$k6 workspace $ws6
+bindsym $mod+$k6alt workspace $ws6
 bindsym $mod+Mod2+$k7 workspace $ws7
+bindsym $mod+$k7alt workspace $ws7
 bindsym $mod+Mod2+$k8 workspace $ws8
+bindsym $mod+$k8alt workspace $ws8
 bindsym $mod+Mod2+$k9 workspace $ws9
+bindsym $mod+$k9alt workspace $ws9
 bindsym $mod+Mod2+$kX workspace $wsX
+bindsym $mod+$kXalt workspace $wsX
 
 # Move focused container to workspace
 bindsym $mod+Shift+Mod2+$k1alt move container to workspace $ws1
+bindsym $mod+Shift+$k1alt move container to workspace $ws1
 bindsym $mod+Shift+Mod2+$k2alt move container to workspace $ws2
+bindsym $mod+Shift+$k2alt move container to workspace $ws2
 bindsym $mod+Shift+Mod2+$k3alt move container to workspace $ws3
+bindsym $mod+Shift+$k3alt move container to workspace $ws3
 bindsym $mod+Shift+Mod2+$k4alt move container to workspace $ws4
+bindsym $mod+Shift+$k4alt move container to workspace $ws4
 bindsym $mod+Shift+Mod2+$k5alt move container to workspace $ws5
+bindsym $mod+Shift+$k5alt move container to workspace $ws5
 bindsym $mod+Shift+Mod2+$k6alt move container to workspace $ws6
+bindsym $mod+Shift+$k6alt move container to workspace $ws6
 bindsym $mod+Shift+Mod2+$k7alt move container to workspace $ws7
+bindsym $mod+Shift+$k7alt move container to workspace $ws7
 bindsym $mod+Shift+Mod2+$k8alt move container to workspace $ws8
+bindsym $mod+Shift+$k8alt move container to workspace $ws8
 bindsym $mod+Shift+Mod2+$k9alt move container to workspace $ws9
+bindsym $mod+Shift+$k9alt move container to workspace $ws9
 bindsym $mod+Shift+Mod2+$k0alt move container to workspace $ws0
+bindsym $mod+Shift+$k0alt move container to workspace $ws0
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,6 +216,7 @@ for_window [class="Atom"] move window to workspace $ws0
 for_window [class="discord"] move window to workspace $ws9
 for_window [class="Thunderbird"] move window to workspace $ws6
 for_window [class="Evolution"] move window to workspace $ws6
+for_window [class="Clicker"] floating enable
 #assign [title=".*Vanille.*"] $ws3
 #for_window [class="Code"] move window to workspace $ws3
 #for_window [class="Fun"] move window to workspace $ws8
@@ -228,27 +246,9 @@ mode "resize" {
     bindsym $mod+r mode "default"
 
     # resize mode also controls brightness
-    bindsym plus exec light -A 20
-    bindsym minus exec light -U 20
+    bindsym plus exec ~/bin/bright Up
+    bindsym minus exec ~/bin/bright Down
 }
-
-# Volume apps : alsamixer + vis
-bindsym $mod+Shift+v exec --no-startup-id ~/.config/scripts/volume.sh
-#for_window [class="^Mixer$"] floating enable; [class="^Mixer$"] move position 650 60
-#for_window [class="^Visualizer"] floating enable; [class="^Visualizer$"] move position 30 30
-
-# NM apps : nmtui / nm-connection-editor
-bindsym $mod+Shift+t exec --no-startup-id ~/.config/scripts/network.sh
-#for_window [class="^Scanner$"] floating enable; [class="^Scanner$"] move position 20 20
-#for_window [class="Nm-connection-editor"] floating enable; [class="Nm-connection-editor"] move position 740 100
-
-# Resource apps : btm + htop
-bindsym $mod+Shift+h exec --no-startup-id ~/.config/scripts/resources.sh
-#for_window [class="^Bottom$"] floating enable; [class="^Bottom$"] move position 20 15
-#for_window [class="^Top$"] floating enable; [class="^Top$"] move position 600 80
-
-# Passwords
-bindsym $mod+Shift+w exec --no-startup-id passmenu
 
 # Workspace bar + status bar
 bar {
@@ -256,30 +256,31 @@ bar {
     position bottom
     font pango: JetBrains Mono Bold 9
     strip_workspace_numbers yes
-    status_command i3status -c /home/vanille/.config/i3status/config
+    #status_command i3status -c /home/vanille/.config/i3status/config
+    status_command i3status-rs
+    #status_command /home/vanille/bin/i3status-rust/target/release/i3status-rs
     tray_output none
 
      colors {
-        background #1d1f21
+        background #1b1d1f
         statusline #1d1f21
-        separator #FFFFFF
+        separator #989898
 
         #                       border   background      text
-        focused_workspace       #002255  #00BBFF         #000000
-        inactive_workspace      #998899  #110011         #FFFFFF
-        urgent_workspace        #000000  #FFBB00         #990000
+        focused_workspace       #aaff50  #b8bb26         #001000
+        inactive_workspace      #757575  #202020         #808080
+        urgent_workspace        #cc241d  #d79921         #550000
     }
 }
 
 # Notifications
-exec --no-startup-id dunst
 
+exec --no-startup-id dunst
 # Compositor
 #exec_always --no-startup-id pkill picom; picom --config ~/.config/picom.conf
 
-
 # Some more setup
-exec_always --no-startup-id ~/.xinitrc
+exec_always bash /home/vanille/.config/env/xinitrc
 
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec_always --no-startup-id pkill volumeicon; volumeicon
