@@ -31,9 +31,7 @@ menu.grid(
     [None, e_reboot, e_killx],
 )
 
-menu.render()
-
-menu.update_rasi({
+menu.rasi.update({
     'layout': {
         'window': {
             'padding': 5,
@@ -66,4 +64,4 @@ menu.update_rasi({
     },
 })
 
-menu.gen_rasi()
+menu.main()

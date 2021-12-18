@@ -29,9 +29,9 @@ from++ .env
     sym i3status-rust i3status-rust
   into-- .config
   from++ scripts
-    run launcher
-    run controls
-    run sysmenu
+    run launcher/gen.py
+    run controls/gen.py
+    run sysmenu/gen.py
   from-- scripts
 from-- .env
 

@@ -45,9 +45,7 @@ menu.grid(
     [e_click, None, None],
 )
 
-menu.render()
-
-menu.update_rasi({
+menu.rasi.update({
     'layout': {
         'window': {
             'padding': 5,
@@ -80,4 +78,4 @@ menu.update_rasi({
     },
 })
 
-menu.gen_rasi()
+menu.main()
