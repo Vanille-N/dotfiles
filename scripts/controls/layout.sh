@@ -1,8 +1,8 @@
 #! /bin/bash
 
-CONF_DIR="/home/vanille/.config"
+CONF_DIR="/home/vanille/.env"
 EXEC_DIR="$CONF_DIR/scripts/controls"
-ENV_DIR="$CONF_DIR/env"
+ENV_DIR="$CONF_DIR/shell"
 LAYOUT_DIR="$CONF_DIR/i3/layouts"
 
 SELECT="$1"

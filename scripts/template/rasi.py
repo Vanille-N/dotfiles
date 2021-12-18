@@ -9,9 +9,8 @@ from collections import namedtuple
 import jinja2 as j2
 import os
 
-config_dir = f"/home/vanille/.config"
-templ_dir = f"{config_dir}/scripts/template"
-rofi_dir = f"{config_dir}/rofi"
+templ_dir = f"/home/vanille/.env/scripts/template"
+rofi_dir = f"/home/vanille/.config/rofi"
 
 def deepclone(obj):
     if type(obj) == list:

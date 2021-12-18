@@ -6,12 +6,13 @@ from rofi import Entry, Cmd
 name = "controls"
 dir_home = "/home/vanille"
 dir_config = f"{dir_home}/.config"
-dir_here = f"{dir_config}/scripts/{name}"
+dir_here = f"{dir_home}/.env/scripts/{name}"
+dir_dest = f"{dir_config}/scripts/{name}"
 dir_rasi = f"{dir_config}/rofi/{name}"
 
 menu = rofi.Menu(
     name,
-    dir=dir_here,
+    dir=dir_dest,
     prompt="Monitor",
     font_size=30,
     formatter=rofi.Fmt.center(10),

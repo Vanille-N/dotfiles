@@ -33,7 +33,7 @@ import os
 
 import rasi
 
-templ_dir = "/home/vanille/.config/scripts/template"
+templ_dir = "/home/vanille/.env/scripts/template"
 
 class Fitness:
     """Check query fitness and evaluate cost"""
