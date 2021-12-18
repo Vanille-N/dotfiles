@@ -1,0 +1,135 @@
+{# Jinja2 template for Rofi configuration #}
+/*  ==========================================================================
+    File: layout.rasi
+    Desc: Shared rules between all rofi themes
+    Original Author: bardisty <b@bah.im>
+    Templated by: Vanille-N <vanille@crans.org>
+        for use with rofi.py
+    ========================================================================== */
+
+window {
+    background-color: @background;
+    border:           {{window.border}};
+    padding:          {{window.padding}};
+    width:            {{window.width}};
+    height:           {{window.height}};
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+    padding:      1px;
+}
+
+textbox {
+    highlight:  @highlight;
+    text-color: @foreground;
+}
+
+listview {
+    border:       {{listview.border}};
+    padding:      {{listview.padding}};
+    border-color: @separatorcolor;
+    spacing:      {{listview.spacing}};
+    scrollbar:    @scrollbar;
+    columns:      {{listview.columns}};
+}
+
+element {
+    border:  {{element.border}};
+    padding: {{element.padding}};
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:        {{scrollbar.width}};
+    border:       {{scrollbar.border}};
+    handle-color: @scrollbar-handle;
+    handle-width: {{scrollbar.handle_width}};
+    padding:      {{scrollbar.padding}};
+}
+
+mode-switcher {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+}
+
+inputbar {
+    spacing:    {{inputbar.spacing}};
+    text-color: @normal-foreground;
+    padding:    {{inputbar.padding}};
+    children:   {{inputbar.children}};
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        " :: ";
+    text-color: @normal-foreground;
+    margin:     0 0 0 0;
+}
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}

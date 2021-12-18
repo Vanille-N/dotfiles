@@ -1,0 +1,33 @@
+{# Jinja2 template for Rofi script #}
+#! /bin/bash
+
+# File: main.sh
+# Desc: rofi launcher and choice parser
+# Author: Vanille-N
+# Templated for use with rofi.py
+# Updated Dec. 2021
+
+{{pre}}
+
+log() { echo "$1" >> {{dir}}/log; }
+
+MENU="$( \
+    rofi \
+        -no-lazy-grab -dmenu -i -sep '|' \
+        -p '{{prompt}}' \
+        -font 'Iosevka Nerd Font {{font}}' \
+        -markup-rows \
+        -theme '{{theme}}' \
+        -selected-row '{{sel_row}}' \
+        -eh '{{eh}}' \
+    < {{dir}}/menu
+)"
+
+case "$MENU" in{#
+#}{% for e in entries %}{#
+#}{% if e != None %}
+  (*'{{e.text}}'*) log "{{e.uid}},1"; {{e.cmd}} & ;;{#
+#}{% endif %}{#
+#}{% endfor %}
+esac
+
