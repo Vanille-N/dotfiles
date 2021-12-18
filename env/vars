@@ -1,15 +1,31 @@
 #!/usr/bin/bash
 
-HOME="/home/vanille"
-
-# path
-export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.opam/default/bin:usr/local/bin:/usr/bin:/bin:/usr/local/sbin:$HOME/.local/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.gem/ruby/2.7.0/bin:$HOME/.gem/ruby/3.0.0/bin:$HOME/bin/zig:$HOME/.nimble/bin:$HOME/.local/bin/nim/bin"
+# Path
+PATHDIRS=(
+    "$HOME/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/.opam/default/bin"
+    '/usr/local/bin'
+    '/usr/bin'
+    '/bin'
+    '/usr/local/sbin'
+    "$HOME/.local/bin"
+    '/usr/bin/site_perl'
+    '/usr/bin/vendor_perl'
+    '/usr/bin/core_perl'
+    "$HOME/.gem/ruby/2.7.0/bin"
+    "$HOME/.gem/ruby/3.0.0/bin"
+    "$HOME/bin/zig"
+    "$HOME/.nimble/bin"
+    "$HOME/.local/bin/nim/bin"
+)
+export PATH=$( echo "${PATHDIRS[*]}" | tr ' ' ':' )
 
 # ctrl+o in fzf opens selected file in vim
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 
 # edition
-export EDITOR=gedit
+export EDITOR=vim
 export VISUAL=vim
 
 # GPG (signature)
@@ -17,22 +33,19 @@ export GPG_TTY="$(tty)"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 # color tweak for exa
-export EXA_COLORS="*.mp3=35"
+export EXA_COLORS='*.mp3=35'
 
 # directories in direct access
-export CDPATH=".:$HOME:$HOME/School/L3/2S-Cours:$HOME/School/L3:$HOME/.config"
+export CDPATH=".:$HOME:$HOME/School/M1/Cours:$HOME/School/M1:$HOME/.config"
 
 # exercism cfg
 export BATS_RUN_SKIPPED=true
 
-export WORKSPACE_0="0:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_1="1:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_2="2:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_3="3:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_4="4:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_5="5:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_6="6:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_7="7:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_8="8:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_9="9:<span font='InupiaqNumbers 11'></span>"
-export WORKSPACE_X="100:×"
+# OCaml exception path
+export OCAMLRUNPARAM=b
+
+# Some more exhaustive environment variables
+. "$PERSO_ENV/workspaces.sh"
+. "$PERSO_ENV/signals.sh"
+. "$PERSO_ENV/errnos/listing"
+

@@ -5,6 +5,14 @@ set colored-stats On
 set visible-stats Off
 set mark-modified-lines Off
 set mark-symlinked-directories Off
+set skip-completed-text On
 
-"\e[1;3A": '\C-a\C-kcd_up\n'
-"\e[1;3D": '\C-a\C-kcd_prev\n'
+# Alt+Left, Alt+Up to easily change directories
+"\e[1;3A": '\C-a\C-k cd_up\n'
+"\e[1;3D": '\C-a\C-k cd_prev\n'
+# Shift+Tab to cycle through completions
+"\e[Z": menu-complete
+# Alt+Down to wrap current command in "$( ... )"
+"\e[1;3B": '\C-a "$( \C-e )"\C-a'
+
+"\C-h": ' sk < ~/.bash_history\n'

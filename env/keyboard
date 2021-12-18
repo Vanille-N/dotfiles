@@ -18,3 +18,4 @@ xmodmap -e "keycode 94 = Escape Escape"
 
 # remap Backspace to Delete
 xmodmap -e "keycode 22 = Delete"
+

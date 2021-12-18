@@ -7,14 +7,17 @@ alias 'la'='exa -a'
 alias 'lla'='exa -la'
 alias 'fda'='fd -IH'
 alias 'rga'='rg -uuu'
-alias 'preview'='fzf --preview "bat --color \"always\" {}"'
 alias '..'='cd ..'
+alias 'opnd'='opn --mode=devour'
+alias 'opnp'='opn --mode=parallel'
+alias 'opnm'='opn --multi'
+alias 'opnmd'='opn --mode=devour --multi'
+alias 'opnmp'='opn --mode=parallel --multi'
 
 # updates
-alias 'pacs'='sudo pacman -S'
-alias 'pac++'='sudo pacman -Syu'
-alias 'pac--'='sudo pacman -Rncs'
-alias 'rust++'='rustup update'
+alias 'yeet'='paru -Rncs'
+rustupdate() { rustup update; cargo install-update -a; }
+alias 'rust++'='rustupdate'
 alias 'git--'='git rm --cache -rf'
 alias 'cleanpac'='paccache -rvk3'
 
@@ -23,16 +26,19 @@ alias 'btm'='btm -a'
 alias 'man'='man -P "less -Q"'
 alias 'ffeh'='feh -F'
 alias 'less'='less -Q'
+alias 'gdb'='gdb -q'
+alias 'ada'='gnatmake'; complete -F _gnatmake ada
 
 # utils
 alias 'icat'='kitty +kitten icat'
 alias 'xclip'="xclip -selection c"
 alias 'gitnuke'='fts_gitignore_nuke'
 alias 'touchall'='find . -exec touch {} +'
+alias 'hyperlinks'='/bin/ls --hyperlink=auto'
 alias 'cx'='chmod +x'
 alias 'hsync'='rsync -rhP'
-alias 'hyperlinks'='/bin/ls --hyperlink=auto'
-alias 'chars'='grep -o .'
+alias 'ip'='ip -c'
+alias 'wip'='watch -c ip -c'
 
 # mount
 alias 'mountusb'='sudo mount -o gid=users,fmask=113,dmask=002'
@@ -46,4 +52,4 @@ alias 'cd_prev'='cd - && pwd && ls'
 export HISTIGNORE="cd_*:$HISTIGNORE"
 
 # edition
-alias 'fugitive'='vim +Gstatus +only'
+alias 'fugitive'='vim +Git +only'
