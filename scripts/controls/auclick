@@ -1,0 +1,5 @@
+#! /bin/bash
+
+alacritty \
+    --class auclick-su,Clicker \
+    -e /home/vanille/bin/auclick-su
