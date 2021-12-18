@@ -1,0 +1,48 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 521,
+       "width": 601,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "btm",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Procs$",
+        "instance": "^btm$",
+        "machine": "^planifolia$",
+        "title": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 601,
+       "width": 601,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "htop",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^Procs$",
+        "instance": "^htop$",
+        "machine": "^planifolia$",
+        "title": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+}
+

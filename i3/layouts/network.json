@@ -1,0 +1,82 @@
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 601,
+       "width": 601,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "nm.sh",
+    "percent": 0.6328125,
+    "swallows": [
+       {
+       "class": "^Scanner$",
+       "instance": "^nm.sh$",
+       "machine": "^planifolia$",
+       "title": "^Alacritty$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.3671875,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 601,
+               "width": 601,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "ip.sh",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Scanner$",
+               "instance": "^ip.sh$",
+               "machine": "^planifolia$",
+               "title": "^Alacritty$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 400,
+               "width": 600,
+               "x": 383,
+               "y": 184
+            },
+            "marks": [],
+            "name": "Network Connections",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^Nm\\-connection\\-editor$",
+               "instance": "^nm\\-connection\\-editor$",
+               "machine": "^planifolia$",
+               "title": "^Network\\ Connections$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
