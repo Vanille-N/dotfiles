@@ -1,0 +1,13 @@
+#! /bin/bash
+
+DATADIR="/usr/include/asm-generic"
+DATA=(
+    "$DATADIR/errno-base.h"
+    "$DATADIR/errno.h"
+)
+
+PROGDIR="$PERSO_ENV/errnos"
+BINDIR="$PERSO_BIN"
+
+awk -f "$PROGDIR/mklisting.awk" ${DATA[@]} > "$PROGDIR/listing"
+awk -f "$PROGDIR/mkperror.awk" ${DATA[@]} > "$BINDIR/perror"

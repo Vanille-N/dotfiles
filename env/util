@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+# For commands that are more elaborate than those
+# in alias but less so than funcs
+
+# clever completion function for cd
+# looks to CDPATH iff no match in current directory
+_clever_cd () { CDPATH= _cd "$@"; if [ -z "$COMPREPLY" ]; then _cd "$@"; fi; }
+complete -F _clever_cd -o nospace cd
+alias 'cd'='cd >/dev/null'
+
+# move and show
+cl() { cd "$@" && ls; }
+complete -F _clever_cd -o nospace cl
+
+# Rust-style String::chars
+#chars() {
+#    while IFS= read -rn1 a; do
+#        printf "%s\n" "${a:-$'\n'}"
+#    done
+#}
+alias 'chars'='grep -o .'
+
+# OCaml's `ignore : 'a -> unit`
+mute() { "$@" &>/dev/null; }
+
+# Python's str.join(_)
+strjoin() { sed ":a; N; \$!ba; s/\n/$1/g"; }
+
+# Char manipulation
+tolower() { tr '[A-Z]' '[a-z]'; }
+toupper() { tr '[a-z]' '[A-Z]'; }
