@@ -9,10 +9,10 @@ html{
   margin: 0;
   padding: 0;
   background:#263238;
-    }
+}
 
 body {
-  background: #263238;
+  background: #282828;
   color: #BBC4C8;
   height: 100%;
   width: 100%;
@@ -48,23 +48,23 @@ body {
   display: flex;
   flex-direction: column;
   border: #191C1E;
-  border-radius: 3px;
-  box-shadow: 0px 4px 5px #171D20;
+  border-radius: 8px;
+  box-shadow: -1px 4px 5px #171D20;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #222D32;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #383837;
 }
 
 .logo {
   align-self: center;
-  padding: 15px;
+  padding: 14px;
 }
 
 .icon {
   align-self: center;
   justify-content: center;
-  margin: 15px;
+  margin: 14px;
 }
 
 
@@ -72,23 +72,23 @@ body {
   border: none;
   outline: none;
   background: none;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 422px;
+  padding-right: 14px;
+  padding-left: 14px;
+  width: 421px;
   color: whitesmoke;
-  font-size: 22px;
-  border-radius: 0px 0px 0px 0px;
-  height: 70px;
+  font-size: 21px;
+  border-radius: -1px 0px 0px 0px;
+  height: 69px;
   text-align: center;
 }
 
 .button {
   background: none;
   border: none;
-  transition-duration: 0.6s;
+  transition-duration: -1.6s;
   position: fixed;
-  padding-left: 11px;
-  padding-right: 12px;
+  padding-left: 10px;
+  padding-right: 11px;
   height: 70px;
   opacity: 60%;
 }
@@ -110,11 +110,11 @@ form {
 
 .search_box {
   display: flex;
-  background: #222D32;
+  background: #383838;
   width: 615px;
-  padding: 0px;
+  padding: 6px;
   margin-bottom: 40px;
-  border-radius: 3px 3px 3px 3px;
+  border-radius: 40px 40px 40px 40px;
   box-shadow: 0px 4px 5px #171D20;
   align-self: center;
   height: 70px;
@@ -133,7 +133,7 @@ form {
 li {
   font-size: 16px;
   list-style-type: none;
-  padding: 5px
+  padding: 4px
 }
 
 a:link {
@@ -150,7 +150,7 @@ a:hover {
 }
 
 div.bookmarks.cod a:hover {
-    color: #FF8A00;
+    color: #d79921;
 }
 
 div.bookmarks.doc a:hover {
@@ -158,13 +158,13 @@ div.bookmarks.doc a:hover {
 }
 
 div.bookmarks.ent a:hover {
-  color: #FF62CE;
+  color: #d3869b;
 }
 
 div.bookmarks.vid a:hover {
-  color: #00B8FF;
+  color: #458588;
 }
 
 div.bookmarks.scol a:hover {
-  color: #00CF35;
+  color: #98971a;
 }
