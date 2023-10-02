@@ -23,11 +23,17 @@ from++ .env
     sym bottom bottom
     sym dunst dunst
     sym zathura zathura
+    sym mimeapps.list mimeapps.list
     into++ i3
       sym config i3/config
     into-- i3
     sym i3status-rust i3status-rust
   into-- .config
+  into++ .mutt
+    from++ mutt
+      sym muttrc muttrc
+    from-- mutt
+  into-- .mutt
   from++ scripts
     run launcher/gen.py
     run controls/gen.py

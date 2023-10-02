@@ -30,6 +30,8 @@ Plug 'vim-scripts/vis'
 Plug 'mariappan/dragvisuals.vim'
 Plug 'qnighy/lalrpop.vim'
 Plug 'ap/vim-css-color'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'kaarmu/typst.vim'
 call plug#end()
 
 set bg=dark
@@ -98,6 +100,12 @@ set nofoldenable    " disable folding
 " Numbering mode absolute
 set number
 
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
 " Indent
 "   enable
 set breakindent
@@ -145,10 +153,13 @@ au BufEnter *.ml,*.mli :setlocal indentkeys= "0{,0},0),0],:,0#,!^F,o,O,e,0=and,0
 au BufRead,BufNewFile *.bil setlocal filetype=bil
 au BufRead,BufNewFile *.pest setlocal filetype=pest
 au BufRead,BufNewFile *.toml setlocal filetype=toml
-au BufRead,BufNewFile *.tmk setlocal filetype=texmake
+au BufRead,BufNewFile *.slx setlocal filetype=sylex
+au BufRead,BufNewFile *.lus,*.ept setlocal filetype=lustre
 
 au BufRead,BufNewFile *.fl,*.flex,*.l,*.lm setlocal filetype=lex
 au BufRead,BufNewFile *.y,*.ypp,*.ym setlocal filetype=yacc
+au BufRead,BufNewFile *.j2 setlocal filetype=jinja
+au BufRead,BufNewFile *.v setlocal indentkeys=
 
 " nerdtree quit when main split is closed
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |

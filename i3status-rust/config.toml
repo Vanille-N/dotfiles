@@ -1,30 +1,32 @@
 interval = 2
 
 [theme]
-name = "semi-native"
+theme = "semi-native"
 
 [icons]
-file = "/home/vanille/.config/i3status-rust/generated.toml"
+icons = "/home/vanille/.config/i3status-rust/icons.toml"
 
 [[block]]
 block = "toggle"
-text = ""
-command_on = "killall -SIGUSR2 dunst; rm -f /home/vanille/.config/i3status-rust/quietmode"
-command_off = "killall -SIGUSR1 dunst; touch /home/vanille/.config/i3status-rust/quietmode"
+format = "$icon "
+command_on = "killall -SIGUSR2 dunst; rm -f /home/nash/.config/i3status-rust/quietmode"
+command_off = "killall -SIGUSR1 dunst; touch /home/nash/.config/i3status-rust/quietmode"
 icon_off = "toggle_quiet_off"
 icon_on = "toggle_quiet_on"
-command_state = "stat /home/vanille/.config/i3status-rust/quietmode 1>/dev/null 2>&1"
+command_state = "stat /home/nash/.config/i3status-rust/quietmode 1>/dev/null 2>&1"
 
 [[block]]
 block = "sound"
-format = "{volume}"
-on_click = "/usr/bin/amixer -D pulse set Master 1+ toggle"
+format = "$icon $volume"
+[[block.click]]
+button = "left"
+cmd = "/usr/bin/amixer -D pulse set Master 1+ toggle"
 [block.theme_overrides]
 idle_fg = "#665c54"
 
 [[block]]
 block = "backlight"
-format = ""
+format = "$icon"
 step_width = 5
 minimum = 0
 maximum = 100
@@ -34,9 +36,11 @@ idle_fg = "#665c54"
 
 [[block]]
 block = "custom"
-command = "echo \"<span font='Iosevka Nerd Font 12'></span><span font='Iosevka Nerd Font 6'> </span>\""
+command = "echo \"<span font='Iosevka Nerd Font 12'>󰲊</span><span font='Iosevka Nerd Font 6'> </span>\""
 interval = "once"
-on_click = "/home/vanille/.config/scripts/network.sh"
+[[block.click]]
+button = "left"
+cmd = "/home/nash/.env/scripts/controls/layout.sh network"
 [block.theme_overrides]
 idle_fg = "#689d6a"
 
@@ -44,9 +48,10 @@ idle_fg = "#689d6a"
 block = "net"
 device = "wlo1"
 format = "{ssid} {signal_strength}"
-hide_missing = true
-hide_inactive = true
-on_click = "/home/vanille/.config/scripts/network.sh"
+missing_format = ""
+[[block.click]]
+button = "left"
+cmd = "/home/nash/.env/scripts/controls/layout.sh network"
 [block.theme_overrides]
 idle_fg = "#689d6a"
 
@@ -54,35 +59,39 @@ idle_fg = "#689d6a"
 block = "net"
 device = "enp0s25"
 format = "{ssid} {signal_strength}"
-hide_missing = true
-hide_inactive = true
-on_click = "/home/vanille/.config/scripts/network.sh"
+missing_format = ""
+[[block.click]]
+button = "left"
+cmd = "/home/nash/.env/scripts/controls/layout.sh network"
 [block.theme_overrides]
 idle_fg = "#689d6a"
 
 [[block]]
 block = "cpu"
 interval = 2
-format = "{barchart} {utilization} @ {frequency}"
-on_click = "/home/vanille/.config/scripts/resources.sh"
+format = "$icon $barchart $utilization @$frequency"
+[[block.click]]
+button = "left"
+cmd = "/home/nash/.env/scripts/controls/layout.sh procs"
 
 [[block]]
 block = "battery"
-format = "{percentage} {time}</span>"
-full_format = "</span>"
+format = "$icon $percentage $time</span>"
+full_format = "$icon</span>"
 missing_format = "</span>"
 full_threshold = 100
 
 [[block]]
 block = "memory"
-format_mem = "{mem_used}::{mem_total}"
-clickable = false
+format = "$icon $mem_used::$mem_total"
 warning_mem = 80
 critical_mem = 95
-on_click = "/home/vanille/.config/scripts/resources.sh"
+[[block.click]]
+button = "left"
+cmd = "/home/nash/.env/scripts/controls/layout.sh procs"
 
 [[block]]
 block = "time"
-format = "%Y-%m-%d (%a) %H:%M"
+format = "$timestamp.datetime(f:'%Y-%m-%d (%a) %H:%M', l:en_US)"
 [block.theme_overrides]
 idle_fg = "#d3869b"

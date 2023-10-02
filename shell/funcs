@@ -29,6 +29,14 @@ cml() { # OCaml
     ocamlopt -o "$base.exe" "$base.ml" "$@"
 }
 
+covim() {
+    vim "${1%.*}.v" +CoqStart
+}
+
+mdview() {
+    pandoc "$1" | lynx -stdin
+}
+
 # clippy wrapper
 clippy() { base="${1%.*}"; ~/.cargo/bin/clippy-driver "$base.rs"; rm "$base"; }
 
@@ -75,3 +83,53 @@ search() {
 webcamshot() {
     mpv av://v4l2:/dev/video0 --profile=low-latency --untimed
 }
+
+mkdir() {
+    /usr/bin/mkdir -p "$@"
+}
+
+touch() {
+    for arg in "$@"; do
+        case "$arg" in
+            (-*) ;;
+            (*) /usr/bin/mkdir -p "$( dirname "$arg" )" ;;
+        esac
+    done
+    /usr/bin/touch "$@"
+}
+
+become() {
+    opnd "$@"
+    exit
+}
+
+cryptopen() {
+    local SERIAL=
+    case "$1" in
+        (iproof) SERIAL=Hitachi_HDS721010CLA332_JP9960HZ0MY8DU;;
+        (pspace) SERIAL=WDC_WD1002FAEX-00Z3A0_WD-WCATR8622570;;
+        (*) echo "No such disk" >&2;
+            return 1;
+    esac
+    local disk=
+    for device in $( ls /dev/sd* ); do
+        if udevadm info $device | grep $SERIAL &>/dev/null; then disk=$device; break; fi
+    done
+    if [ -z "$disk" ]; then
+        echo "$1 not mounted" >&2;
+        return 1;
+    fi
+    local key="/home/vanille/.luks/$1.key"
+    echo "Found $1 on $disk"
+    echo "Decrypting ${disk}1 to /dev/mapper/$1 using key $key"
+    sudo cryptsetup luksOpen ${disk}1 $1 --key-file=/home/vanille/.luks/$1.key
+    echo "Mounting /dev/mapper/$1 to /mnt/$1"
+    mkdir -p /mnt/$1
+    sudo mount /dev/mapper/$1 /mnt/$1
+}
+cryptclose() {
+    sudo umount "/mnt/$1"
+    sudo cryptsetup luksClose "/dev/mapper/$1"
+}
+complete -W 'iproof pspace' cryptopen
+complete -W 'iproof pspace' cryptclose

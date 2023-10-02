@@ -10,7 +10,7 @@
     },
     "marks": [],
     "name": "nm.sh",
-    "percent": 0.6328125,
+    "percent": 0.45,
     "swallows": [
        {
        "class": "^Scanner$",

@@ -39,6 +39,12 @@ alias 'cx'='chmod +x'
 alias 'hsync'='rsync -rhP'
 alias 'ip'='ip -c'
 alias 'wip'='watch -c ip -c'
+alias 'mypy'='mypy --strict'
+alias 'yt2mp3'='yt-dlp -x --audio-format mp3 --audio-quality 0 --add-metadata'
+alias 'dd'='sudo dd status=progress'
+alias 'svim'='sudoedit'
+alias 'ihaskell'='stack ghci'
+
 
 # mount
 alias 'mountusb'='sudo mount -o gid=users,fmask=113,dmask=002'

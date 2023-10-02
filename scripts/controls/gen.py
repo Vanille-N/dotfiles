@@ -50,7 +50,7 @@ menu.rasi.update({
         'window': {
             'padding': 5,
             'width': 650,
-            'height': 385,
+            'height': 438,
         },
         'listview': {
             'columns': 3,
@@ -64,7 +64,7 @@ menu.rasi.update({
         },
         'inputbar': {
             'padding': "0px",
-            'children': "[]",
+            #'children': "[]",
         },
         'scrollbar': {
             'width': "0px",

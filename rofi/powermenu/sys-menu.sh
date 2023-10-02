@@ -31,7 +31,7 @@ color="${styles[$(( $RANDOM % 8 ))]}"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/$theme --fake-transparency"
+rofi_command="rofi -theme $dir/$theme -fake-transparency"
 
 # Options
 shutdown=""

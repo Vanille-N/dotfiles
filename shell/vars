@@ -36,7 +36,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export EXA_COLORS='*.mp3=35'
 
 # directories in direct access
-export CDPATH=".:$HOME:$HOME/School/M1/Cours:$HOME/School/M1:$HOME/.config"
+export CDPATH=".:$HOME:$HOME/School/ARPE:$HOME/.config"
 
 # exercism cfg
 export BATS_RUN_SKIPPED=true

@@ -7,6 +7,7 @@ Text = "_TEXT"
 FgExtend = "_FG_EXTEND"
 Suffix = "_SUFFIX"
 List = "_LIST"
+Array = "_ARRAY"
 
 def fontsize(text, size):
     return "<span font='Iosevka Nerd Font {}'>{}</span>".format(size, text)
@@ -16,22 +17,22 @@ icons = {
     List: [{
         Name: "backlight",
         Suffix: fontsize(" ", 5),
-        List: [
-            { Name: "empty", Fg: '#ffffff', Text: "" },
-            { Name: "1", Fg: '#f5f4f4', Text: "" },
-            { Name: "2", Fg: '#ebe9e8', Text: "" },
-            { Name: "3", Fg: '#e0dedd', Text: "" },
-            { Name: "4", Fg: '#d6d4d1', Text: "" },
-            { Name: "5", Fg: '#ccc9c6', Text: "" },
-            { Name: "6", Fg: '#c2bebb', Text: "" },
-            { Name: "7", Fg: '#b8b3af', Text: "" },
-            { Name: "8", Fg: '#ada8a4', Text: "" },
-            { Name: "9", Fg: '#a39d98', Text: "" },
-            { Name: "10", Fg: '#99928d', Text: "" },
-            { Name: "11", Fg: '#8f8782', Text: "" },
-            { Name: "12", Fg: '#857d76', Text: "" },
-            { Name: "13", Fg: '#7a726b', Text: "" },
-            { Name: "full", Fg: '#70675f', Text: "" },
+        Array: [
+            { Fg: '#ffffff', Text: "" },
+            { Fg: '#f5f4f4', Text: "" },
+            { Fg: '#ebe9e8', Text: "" },
+            { Fg: '#e0dedd', Text: "" },
+            { Fg: '#d6d4d1', Text: "" },
+            { Fg: '#ccc9c6', Text: "" },
+            { Fg: '#c2bebb', Text: "" },
+            { Fg: '#b8b3af', Text: "" },
+            { Fg: '#ada8a4', Text: "" },
+            { Fg: '#a39d98', Text: "" },
+            { Fg: '#99928d', Text: "" },
+            { Fg: '#8f8782', Text: "" },
+            { Fg: '#857d76', Text: "" },
+            { Fg: '#7a726b', Text: "" },
+            { Fg: '#70675f', Text: "" },
         ],
     }, {
         Name: "bat",

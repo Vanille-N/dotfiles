@@ -16,3 +16,8 @@ set skip-completed-text On
 "\e[1;3B": '\C-a "$( \C-e )"\C-a'
 
 "\C-h": ' sk < ~/.bash_history\n'
+
+$if Bash
+    Space: magic-space
+    "\C-u": 'sudo !! \n'
+$endif

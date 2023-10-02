@@ -22,7 +22,7 @@ e_iconut = Entry("ulog", icon="", text="Logout",
     cmd=Cmd.unimplemented("Logout"))
 e_suspend = Entry("susp", icon="望", text="Suspend",
     cmd=CmdSeq(Cmd("systemctl", "suspend"), Cmd("betterlockscreen", "-l")))
-e_reboot = Entry("rebt", icon="", text="Reboot", cmd=Cmd("systemcl", "reboot"))
+e_reboot = Entry("rebt", icon="", text="Reboot", cmd=Cmd("systemctl", "reboot"))
 e_shutdown = Entry("shut", icon="", text="Shutdown", cmd=Cmd("systemctl", "-i", "poweroff"))
 e_killx = Entry("kilx", icon="", text="Killx", cmd=Cmd("pkill", "Xorg"))
 
@@ -36,7 +36,7 @@ menu.rasi.update({
         'window': {
             'padding': 5,
             'width': 675,
-            'height': 265,
+            'height': 317,
         },
         'listview': {
             'columns': 3,
@@ -50,7 +50,7 @@ menu.rasi.update({
         },
         'inputbar': {
             'padding': "0px",
-            'children': "[]",
+            #'children': "[]",
         },
         'scrollbar': {
             'width': "0px",

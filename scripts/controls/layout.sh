@@ -5,6 +5,10 @@ EXEC_DIR="$CONF_DIR/scripts/controls"
 ENV_DIR="$CONF_DIR/shell"
 LAYOUT_DIR="$CONF_DIR/i3/layouts"
 
+pkill nm-connection-e && exit 1
+pkill htop && exit 1
+pkill alsamixer && exit 1
+
 SELECT="$1"
 
 # Save workspace to restore it afterwards

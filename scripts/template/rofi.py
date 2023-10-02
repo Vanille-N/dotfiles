@@ -311,7 +311,7 @@ class Cmd:
         c = self.prog
         for a in self.args:
             c += " '{}'".format(a)
-        return c
+        return c + " &>> /tmp/rofi.log"
 
     def unimplemented(title):
         return Cmd("notify-send", "Unimplemented", title)
@@ -417,7 +417,7 @@ class Rasi:
 
 class Menu:
     """A collection of entries"""
-    def __init__(self, name, *, dir, prompt, font_size=12, formatter=Fmt.line(19)):
+    def __init__(self, name, *, dir, prompt, font_size=12, formatter=Fmt.line(18)):
         self.name = name
         self.dir = dir
         self.prompt = prompt

@@ -1,0 +1,30 @@
+[user]
+	email = neven.villani@crans.org
+	name = Vanille-N
+	signingkey = 7F4F2EDE
+	signinkey = 00E765FA7F4F2EDE
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[gpg]
+	program = gpg2
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[init]
+	defaultBranch = master
+	templatedir = ~/.git_template
+[credential]
+	helper = store
+[alias]
+	ctags = !.git/hooks/ctags
+
+[diff]
+    tool = difft
+	external = difft
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difftastic "$LOCAL" "$REMOTE"
+[pull]
+	rebase = false

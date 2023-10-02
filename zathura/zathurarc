@@ -1,2 +1,5 @@
 set recolor true
 set recolor-lightcolor "#121212"
+
+# do not center search results horizontally
+set search-hadjust false

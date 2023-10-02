@@ -37,9 +37,13 @@ focus_follows_mouse no
 # exec --no-startup-id nm-applet
 
 # Adjust volume
-bindsym XF86AudioRaiseVolume exec /usr/bin/amixer -c 0 set Master 0.2db+
-bindsym XF86AudioLowerVolume exec /usr/bin/amixer -c 0 set Master 0.2db-
-bindsym XF86AudioMute exec /usr/bin/amixer -D pulse set Master 1+ toggle
+## Alsamixer
+#bindsym XF86AudioRaiseVolume exec /usr/bin/amixer -c 0 set Master 0.2db+
+#bindsym XF86AudioLowerVolume exec /usr/bin/amixer -c 0 set Master 0.2db-
+#bindsym XF86AudioMute exec /usr/bin/amixer -D pulse set Master 1+ toggle
+## Pavucontrol
+bindsym XF86AudioRaiseVolume exec /home/vanille/bin/volumectrl +
+bindsym XF86AudioLowerVolume exec /home/vanille/bin/volumectrl -
 
 # Brightness control in default mode (see resize mode for more brightness control)
 bindsym XF86MonBrightnessUp exec ~/bin/bright Up
@@ -50,26 +54,33 @@ floating_modifier $mod
 
 # Start a terminal
 bindsym $mod+Return exec alacritty
-#bindsym $mod+Shift+Return exec xfce4-terminal
-bindsym $mod+KP_Enter exec kitty
 bindsym $mod+Shift+N exec alacritty --working-directory `xcwd`
 
 # Take a screenshot
-bindsym Print exec flameshot gui
+bindsym $mod+Home exec flameshot gui
 
 # Kill focused window
 bindsym $mod+w kill
 bindsym $mod+BackSpace kill
 bindsym $mod+Delete kill
+bindsym $mod+Tab kill
+
+# Force reloading of keyboard configuration
+# Note: the use of 'a' as a binding is not random, the key 'A' is invariant
+# across Dvorak and QWERTY.
+bindsym $mod+a exec --no-startup-id /bin/bash ~/.env/shell/keyboard
+
+# Grab headphones
+bindsym $mod+B exec --no-startup-id bluetoothctl connect 80:C3:BA:13:17:1B
 
 # Program launcher
-bindsym $mod+l exec --no-startup-id ~/.config/scripts/launcher/main.sh
+bindsym $mod+l exec --no-startup-id /bin/bash ~/.config/scripts/launcher/main.sh
 
 # Open system menu
-bindsym $mod+m exec --no-startup-id ~/.config/scripts/sysmenu/main.sh
+bindsym $mod+m exec --no-startup-id /bin/bash ~/.config/scripts/sysmenu/main.sh
 
 # Control panels
-bindsym $mod+c exec --no-startup-id ~/.config/scripts/controls/main.sh
+bindsym $mod+c exec --no-startup-id /bin/bash ~/.config/scripts/controls/main.sh
 
 # Move focus
 bindsym $mod+Left focus left
@@ -78,10 +89,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Move window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Ctrl+Left move left
+bindsym $mod+Ctrl+Down move down
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Right move right
 
 # Change split orientation
 bindsym $mod+h split h
@@ -96,19 +107,22 @@ bindsym $mod+t layout tabbed
 bindsym $mod+n layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Ctrl+numbersign floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+numbersign focus mode_toggle
 
 # focus the parent container
 bindsym $mod+g focus parent
 
 # Multi-monitor management
 set $monitor_main LVDS1
-set $monitor_ext VGA1
+# == Home screen ==
+#set $monitor_ext VGA1
+# == MPI-SWS ==
+set $monitor_ext DP3
 
-# Workspace names
+# Numbered Workspaces
 set $ws0 "0:<span font='InupiaqNumbers 12'></span>"
 set $ws1 "1:<span font='InupiaqNumbers 12'></span>"
 set $ws2 "2:<span font='InupiaqNumbers 12'></span>"
@@ -120,6 +134,31 @@ set $ws7 "7:<span font='InupiaqNumbers 12'></span>"
 set $ws8 "8:<span font='InupiaqNumbers 12'></span>"
 set $ws9 "9:<span font='InupiaqNumbers 12'></span>"
 set $wsX "100:×"
+# Coding Workspaces
+set $wsF1 "11:κ₀"
+set $wsF6 "12:κ "
+set $wsF11 "13:κ'"
+set $wsF16 "14:κ⁺"
+# Docs Workspaces
+set $wsF2 "21:δ₀"
+set $wsF7 "22:δ "
+set $wsF12 "23:δ'"
+set $wsF17 "24:δ⁺"
+# Search Workspaces
+set $wsF3 "31:σ₀"
+set $wsF8 "32:σ "
+set $wsF13 "33:σ'"
+set $wsF18 "34:σ⁺"
+# Media Workspaces
+set $wsF4 "41:μ₀"
+set $wsF9 "42μ "
+set $wsF14 "43μ'"
+set $wsF19 "44:μ⁺"
+# Misc Workspaces
+set $wsF5 "51:ω₀"
+set $wsF10 "52:ω "
+set $wsF15 "53:ω'"
+set $wsF20 "54:ω⁺"
 
 # Workspace jump keys
 set $k0 KP_0
@@ -157,59 +196,100 @@ workspace $ws7 output $monitor_main
 workspace $ws8 output $monitor_ext
 workspace $ws9 output $monitor_main
 
+set $numlk Mod2
 # Switch to workspace
-bindsym $mod+Mod2+$k0 workspace $ws0
-bindsym $mod+$k0alt workspace $ws0
-bindsym $mod+Mod2+$k1 workspace $ws1
-bindsym $mod+$k1alt workspace $ws1
-bindsym $mod+Mod2+$k2 workspace $ws2
-bindsym $mod+$k2alt workspace $ws2
-bindsym $mod+Mod2+$k3 workspace $ws3
-bindsym $mod+$k3alt workspace $ws3
-bindsym $mod+Mod2+$k4 workspace $ws4
-bindsym $mod+$k4alt workspace $ws4
-bindsym $mod+Mod2+$k5 workspace $ws5
-bindsym $mod+$k5alt workspace $ws5
-bindsym $mod+Mod2+$k6 workspace $ws6
-bindsym $mod+$k6alt workspace $ws6
-bindsym $mod+Mod2+$k7 workspace $ws7
-bindsym $mod+$k7alt workspace $ws7
-bindsym $mod+Mod2+$k8 workspace $ws8
-bindsym $mod+$k8alt workspace $ws8
-bindsym $mod+Mod2+$k9 workspace $ws9
-bindsym $mod+$k9alt workspace $ws9
-bindsym $mod+Mod2+$kX workspace $wsX
-bindsym $mod+$kXalt workspace $wsX
+bindsym $mod+$numlk+$k0 workspace $ws0
+bindsym $mod+$k0alt     workspace $ws0
+bindsym $mod+$numlk+$k1 workspace $ws1
+bindsym $mod+$k1alt     workspace $ws1
+bindsym $mod+$numlk+$k2 workspace $ws2
+bindsym $mod+$k2alt     workspace $ws2
+bindsym $mod+$numlk+$k3 workspace $ws3
+bindsym $mod+$k3alt     workspace $ws3
+bindsym $mod+$numlk+$k4 workspace $ws4
+bindsym $mod+$k4alt     workspace $ws4
+bindsym $mod+$numlk+$k5 workspace $ws5
+bindsym $mod+$k5alt     workspace $ws5
+bindsym $mod+$numlk+$k6 workspace $ws6
+bindsym $mod+$k6alt     workspace $ws6
+bindsym $mod+$numlk+$k7 workspace $ws7
+bindsym $mod+$k7alt     workspace $ws7
+bindsym $mod+$numlk+$k8 workspace $ws8
+bindsym $mod+$k8alt     workspace $ws8
+bindsym $mod+$numlk+$k9 workspace $ws9
+bindsym $mod+$k9alt     workspace $ws9
+bindsym $mod+$numlk+$kX workspace $wsX
+bindsym $mod+$kXalt     workspace $wsX
+bindsym $mod+F1         workspace $wsF1
+bindsym $mod+F2         workspace $wsF2
+bindsym $mod+F3         workspace $wsF3
+bindsym $mod+F4         workspace $wsF4
+bindsym $mod+F5         workspace $wsF5
+bindsym $mod+F6         workspace $wsF6
+bindsym $mod+F7         workspace $wsF7
+bindsym $mod+F8         workspace $wsF8
+bindsym $mod+F9         workspace $wsF9
+bindsym $mod+F10        workspace $wsF10
+bindsym $mod+F11        workspace $wsF11
+bindsym $mod+F12        workspace $wsF12
+bindsym $mod+Shift+F1   workspace $wsF13
+bindsym $mod+Shift+F2   workspace $wsF14
+bindsym $mod+Shift+F3   workspace $wsF15
+bindsym $mod+Shift+F4   workspace $wsF16
+bindsym $mod+Shift+F5   workspace $wsF17
+bindsym $mod+Shift+F6   workspace $wsF18
+bindsym $mod+Shift+F7   workspace $wsF19
+bindsym $mod+Shift+F8   workspace $wsF20
 
 # Move focused container to workspace
-bindsym $mod+Shift+Mod2+$k1alt move container to workspace $ws1
-bindsym $mod+Shift+$k1alt move container to workspace $ws1
-bindsym $mod+Shift+Mod2+$k2alt move container to workspace $ws2
-bindsym $mod+Shift+$k2alt move container to workspace $ws2
-bindsym $mod+Shift+Mod2+$k3alt move container to workspace $ws3
-bindsym $mod+Shift+$k3alt move container to workspace $ws3
-bindsym $mod+Shift+Mod2+$k4alt move container to workspace $ws4
-bindsym $mod+Shift+$k4alt move container to workspace $ws4
-bindsym $mod+Shift+Mod2+$k5alt move container to workspace $ws5
-bindsym $mod+Shift+$k5alt move container to workspace $ws5
-bindsym $mod+Shift+Mod2+$k6alt move container to workspace $ws6
-bindsym $mod+Shift+$k6alt move container to workspace $ws6
-bindsym $mod+Shift+Mod2+$k7alt move container to workspace $ws7
-bindsym $mod+Shift+$k7alt move container to workspace $ws7
-bindsym $mod+Shift+Mod2+$k8alt move container to workspace $ws8
-bindsym $mod+Shift+$k8alt move container to workspace $ws8
-bindsym $mod+Shift+Mod2+$k9alt move container to workspace $ws9
-bindsym $mod+Shift+$k9alt move container to workspace $ws9
-bindsym $mod+Shift+Mod2+$k0alt move container to workspace $ws0
-bindsym $mod+Shift+$k0alt move container to workspace $ws0
+bindsym $mod+Ctrl+Mod2+$k1 move container to workspace $ws1
+bindsym $mod+Ctrl+$k1      move container to workspace $ws1
+bindsym $mod+Ctrl+Mod2+$k2 move container to workspace $ws2
+bindsym $mod+Ctrl+$k2      move container to workspace $ws2
+bindsym $mod+Ctrl+Mod2+$k3 move container to workspace $ws3
+bindsym $mod+Ctrl+$k3      move container to workspace $ws3
+bindsym $mod+Ctrl+Mod2+$k4 move container to workspace $ws4
+bindsym $mod+Ctrl+$k4      move container to workspace $ws4
+bindsym $mod+Ctrl+Mod2+$k5 move container to workspace $ws5
+bindsym $mod+Ctrl+$k5      move container to workspace $ws5
+bindsym $mod+Ctrl+Mod2+$k6 move container to workspace $ws6
+bindsym $mod+Ctrl+$k6      move container to workspace $ws6
+bindsym $mod+Ctrl+Mod2+$k7 move container to workspace $ws7
+bindsym $mod+Ctrl+$k7      move container to workspace $ws7
+bindsym $mod+Ctrl+Mod2+$k8 move container to workspace $ws8
+bindsym $mod+Ctrl+$k8      move container to workspace $ws8
+bindsym $mod+Ctrl+Mod2+$k9 move container to workspace $ws9
+bindsym $mod+Ctrl+$k9      move container to workspace $ws9
+bindsym $mod+Ctrl+Mod2+$k0 move container to workspace $ws0
+bindsym $mod+Ctrl+$k0      move container to workspace $ws0
+bindsym $mod+Ctrl+F1       move container to workspace $wsF1
+bindsym $mod+Ctrl+F2       move container to workspace $wsF2
+bindsym $mod+Ctrl+F3       move container to workspace $wsF3
+bindsym $mod+Ctrl+F4       move container to workspace $wsF4
+bindsym $mod+Ctrl+F5       move container to workspace $wsF5
+bindsym $mod+Ctrl+F6       move container to workspace $wsF6
+bindsym $mod+Ctrl+F7       move container to workspace $wsF7
+bindsym $mod+Ctrl+F8       move container to workspace $wsF8
+bindsym $mod+Ctrl+F9       move container to workspace $wsF9
+bindsym $mod+Ctrl+F10      move container to workspace $wsF10
+bindsym $mod+Ctrl+F11      move container to workspace $wsF11
+bindsym $mod+Ctrl+F12      move container to workspace $wsF12
+bindsym $mod+Ctrl+Shift+F1 move container to workspace $wsF13
+bindsym $mod+Ctrl+Shift+F2 move container to workspace $wsF14
+bindsym $mod+Ctrl+Shift+F3 move container to workspace $wsF15
+bindsym $mod+Ctrl+Shift+F4 move container to workspace $wsF16
+bindsym $mod+Ctrl+Shift+F5 move container to workspace $wsF17
+bindsym $mod+Ctrl+Shift+F6 move container to workspace $wsF18
+bindsym $mod+Ctrl+Shift+F7 move container to workspace $wsF19
+bindsym $mod+Ctrl+Shift+F8 move container to workspace $wsF20
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Ctrl+c reload
 # Restart i3 in-place
-bindsym $mod+Shift+r restart
+bindsym $mod+Ctrl+r restart
 
 # Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Bind apps to workspaces
 for_window [class="discord"] move window to workspace $ws9
@@ -239,6 +319,83 @@ mode "resize" {
     # resize mode also controls brightness
     bindsym plus exec ~/bin/bright Up
     bindsym minus exec ~/bin/bright Down
+}
+
+bindsym $mod+z mode "unicode"
+mode "unicode" {
+    # We're not binding Escape and Return
+    # so that we can still do text editing, e.g. vim
+    bindsym $mod+z mode "default"
+
+    # We also still want to be able to move around
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+    bindsym $mod+h split h
+    bindsym $mod+v split v
+    bindsym $mod+f fullscreen toggle
+    bindsym $mod+s layout stacking
+    bindsym $mod+t layout tabbed
+    bindsym $mod+n layout toggle split
+    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space focus mode_toggle
+    bindsym $mod+g focus parent
+
+    # This script does the heavy lifting
+    set $unicode /home/vanille/.env/scripts/controls/unicode.sh
+
+    # Type, Clip, and Record modes
+    bindsym $mod+t exec $unicode type
+    bindsym $mod+c exec $unicode clip
+
+    # Read from numpad
+    bindsym $mod+Mod2+$k0 exec $unicode rmap 0
+    bindsym $mod+$k0alt   exec $unicode rmap 0
+    bindsym $mod+Mod2+$k1 exec $unicode rmap 1
+    bindsym $mod+$k1alt   exec $unicode rmap 1
+    bindsym $mod+Mod2+$k2 exec $unicode rmap 2
+    bindsym $mod+$k2alt   exec $unicode rmap 2
+    bindsym $mod+Mod2+$k3 exec $unicode rmap 3
+    bindsym $mod+$k3alt   exec $unicode rmap 3
+    bindsym $mod+Mod2+$k4 exec $unicode rmap 4
+    bindsym $mod+$k4alt   exec $unicode rmap 4
+    bindsym $mod+Mod2+$k5 exec $unicode rmap 5
+    bindsym $mod+$k5alt   exec $unicode rmap 5
+    bindsym $mod+Mod2+$k6 exec $unicode rmap 6
+    bindsym $mod+$k6alt   exec $unicode rmap 6
+    bindsym $mod+Mod2+$k7 exec $unicode rmap 7
+    bindsym $mod+$k7alt   exec $unicode rmap 7
+    bindsym $mod+Mod2+$k8 exec $unicode rmap 8
+    bindsym $mod+$k8alt   exec $unicode rmap 8
+    bindsym $mod+Mod2+$k9 exec $unicode rmap 9
+    bindsym $mod+$k9alt   exec $unicode rmap 9
+
+    # Save to numpad
+    bindsym $mod+Shift+Mod2+$k0alt exec $unicode wmap 0
+    bindsym $mod+Shift+$k0alt      exec $unicode wmap 0
+    bindsym $mod+Shift+Mod2+$k1alt exec $unicode wmap 1
+    bindsym $mod+Shift+$k1alt      exec $unicode wmap 1
+    bindsym $mod+Shift+Mod2+$k2alt exec $unicode wmap 2
+    bindsym $mod+Shift+$k2alt      exec $unicode wmap 2
+    bindsym $mod+Shift+Mod2+$k3alt exec $unicode wmap 3
+    bindsym $mod+Shift+$k3alt      exec $unicode wmap 3
+    bindsym $mod+Shift+Mod2+$k4alt exec $unicode wmap 4
+    bindsym $mod+Shift+$k4alt      exec $unicode wmap 4
+    bindsym $mod+Shift+Mod2+$k5alt exec $unicode wmap 5
+    bindsym $mod+Shift+$k5alt      exec $unicode wmap 5
+    bindsym $mod+Shift+Mod2+$k6alt exec $unicode wmap 6
+    bindsym $mod+Shift+$k6alt      exec $unicode wmap 6
+    bindsym $mod+Shift+Mod2+$k7alt exec $unicode wmap 7
+    bindsym $mod+Shift+$k7alt      exec $unicode wmap 7
+    bindsym $mod+Shift+Mod2+$k8alt exec $unicode wmap 8
+    bindsym $mod+Shift+$k8alt      exec $unicode wmap 8
+    bindsym $mod+Shift+Mod2+$k9alt exec $unicode wmap 9
+    bindsym $mod+Shift+$k9alt      exec $unicode wmap 9
 }
 
 # Workspace bar + status bar
@@ -271,7 +428,7 @@ exec --no-startup-id dunst
 #exec_always --no-startup-id pkill picom; picom --config ~/.config/picom.conf
 
 # Some more setup
-exec_always bash /home/vanille/.config/env/xinitrc
+exec_always bash /home/vanille/.env/shell/xinitrc
 
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec_always --no-startup-id pkill volumeicon; volumeicon

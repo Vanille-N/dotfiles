@@ -2,11 +2,11 @@
 
 # general layout
 setxkbmap -layout us -variant dvp
-setxkbmap -option caps:backspace
-setxkbmap -option shift:both_capslock
+#setxkbmap -option caps:backspace
+#setxkbmap -option shift:both_capslock
 
 # Caps Lock is no longer a toggle key
-xmodmap -e "clear Lock"
+#xmodmap -e "clear Lock"
 
 # set compose key
 xmodmap -e "keysym Alt_R = Multi_key"
@@ -14,8 +14,8 @@ xmodmap -e "keysym Alt_R = Multi_key"
 # I already have '<' on [, <] and '>' on [. >]
 # -> [< >] becomes [Esc Esc]
 #xmodmap -e "keycode 51 = Escape Escape"
-xmodmap -e "keycode 94 = Escape Escape"
+#xmodmap -e "keycode 94 = Escape Escape"
 
 # remap Backspace to Delete
-xmodmap -e "keycode 22 = Delete"
+#xmodmap -e "keycode 22 = Delete"
 

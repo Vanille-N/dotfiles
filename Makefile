@@ -6,5 +6,5 @@ ENV = ${HOME}/.env
 all: structure
 include structure.mk
 
-structure.mk: ./sync.sh
+structure.mk: ./sync.sh ./macros-sync.sh
 	./$<
